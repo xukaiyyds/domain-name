@@ -1,0 +1,16 @@
+.bg {
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    width: calc(100vw + 60px);
+    height: calc(100vh + 60px);
+    z-index: -1;
+    background: url('../img/bg.png') no-repeat center center/cover;
+    filter: blur(0px);
+}
+
+.loading-text {
+    font-family: 'fonts';
+    font-size: 50px;
+    color: #fff;
+}
