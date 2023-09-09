@@ -19,6 +19,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100vw;
     height: 100vh;
     overflow: hidden;
     user-select: none;
@@ -56,7 +57,6 @@ body {
 }
 
 .link:hover {
-    color: #409EFF;
     text-decoration: none;
 }
 
@@ -104,6 +104,10 @@ body {
 
 .cloud-info a {
     text-decoration: none;
+}
+
+.cloud-info a:hover {
+    color: #409EFF;
 }
 
 .cloud-info p {
