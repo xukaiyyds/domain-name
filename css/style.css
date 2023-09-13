@@ -71,6 +71,8 @@ body {
 
 .label,
 .value {
+    display: flex;
+    align-items: center;
     border-top: 1px solid #e1e1e1;
 }
 
@@ -80,9 +82,8 @@ body {
 
 .label {
     padding: 12px 20px;
-    width: 180px;
+    width: 170px;
     border-right: 1px solid #e1e1e1;
-    /* text-align-last: justify; */
 }
 
 .value {
