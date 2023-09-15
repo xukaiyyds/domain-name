@@ -1,6 +1,6 @@
 @font-face {
     font-family: "font";
-    src: url("../font/HarmonyOS_Sans_SC_Medium.subset.9174345fa91fdf221aca.woff2");
+    src: url("../font/HarmonyOS_Sans_SC_Medium.woff2");
     font-display: swap;
 }
 
@@ -8,10 +8,6 @@
     font-family: "fonts";
     src: url("../font/UnidreamLED.ttf");
     font-display: swap;
-}
-
-* {
-    box-sizing: border-box;
 }
 
 body {
@@ -26,6 +22,7 @@ body {
 }
 
 .container {
+    display: none;
     padding: 45px 65px;
     max-width: 800px;
     width: 95%;
@@ -114,6 +111,10 @@ body {
 .cloud-info p {
     margin-top: 6px;
     font-size: 12px;
+}
+
+github-corners {
+    display: none;
 }
 
 @media (max-width: 800px) {

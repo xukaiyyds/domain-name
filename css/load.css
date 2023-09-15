@@ -5,13 +5,11 @@
     right: 0;
     bottom: 0;
     z-index: -1;
-    background: url('../img/bg.png') no-repeat center center/cover;
-    background-attachment: fixed;
+    background: url('../img/bg.png') no-repeat center center/cover fixed;
     filter: blur(0px);
 }
 
 .loading-text {
-    font-family: 'fonts';
     font-size: 50px;
     color: #fff;
 }
