@@ -5,7 +5,7 @@
     right: 0;
     bottom: 0;
     z-index: -1;
-    background: url('../img/bg.png') no-repeat center center/cover fixed;
+    background: #0f1214 url(../img/bg.png) center center/cover no-repeat fixed;
     filter: blur(0px);
 }
 

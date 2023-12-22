@@ -25,6 +25,7 @@ body {
     display: none;
     padding: 45px 65px;
     max-width: 800px;
+    min-width: 360px;
     width: 95%;
     border-radius: 10px;
     color: #fff;
@@ -81,6 +82,7 @@ body {
     padding: 12px 20px;
     width: 170px;
     border-right: 1px solid #e1e1e1;
+    font-weight: bold;
 }
 
 .value {
