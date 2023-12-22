@@ -4,24 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>中国国家顶级域名注册证书 - 高仿版</title>
-    <!-- 因为没找到合适的logo，这里就先用腾讯云的顶上，也不知道算不算侵权⌇●﹏●⌇ -->
-    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <meta name="author" content="xukaiyyds">
     <meta name="description" content="一个动态的顶级国际域名证书模板。">
-    <link rel="stylesheet" href="css/minireset.min.css">
+    <title>顶级国际域名证书 - 高仿版</title>
+    <!-- 因为没找到合适的logo，这里就先用腾讯云的顶上，也不知道算不算侵权⌇●﹏●⌇ -->
+    <link rel="icon" href="img/favicon.ico">
     <link rel="stylesheet" href="css/load.css">
+    <link rel="stylesheet" href="css/minireset.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <section class="bg"></section>
-    <div class="loading-text time">0%</div>
-    <div class="container">
-        <h1 class="title">顶级国际域名证书</h1>
-        <div class="divider"></div>
+    <section class="loading-text time">0%</section>
+    <main class="container">
+        <header>
+            <h1 class="title">中国国家顶级域名注册证书</h1>
+            <div class="divider"></div>
+        </header>
         <p class="describe">域名 <a href="https://www.xukaiyyds.cn" class="link" target="_blank">xukaiyyds.cn</a> 已由 <a
                 href="img/xukaiyyds.cn.certificate.jpg" class="link" target="_blank">徐凯</a> 完成注册，并已在国际顶级域名数据库中记录。</p>
-        <div class="info">
+        <article class="info">
             <div class="info-item">
                 <div class="label bt-no">域名</div>
                 <div class="value bt-no">xukaiyyds.cn</div>
@@ -48,23 +51,23 @@
                     <span id="countdown"></span>
                 </div>
             </div>
-        </div>
-        <div class="cloud-info">
+        </article>
+        <footer class="cloud-info">
             <a href="https://cloud.tencent.com" class="link" target="_blank">腾讯云</a>
             <p>证书打印日期：<span id="print"></span></p>
-        </div>
-    </div>
+        </footer>
+    </main>
 
     <script>
         let target = new Date("2026/10/16 21:45:32"); // 设置你的域名过期时间
     </script>
-    <script defer src="js/load.js"></script>
-    <script async src="js/time.js"></script>
-    <script async src="js/script.js"></script>
+    <script src="js/load.js" defer></script>
+    <script src="js/time.js" defer></script>
+    <script src="js/script.js" defer></script>
 
     <!-- github link -->
-    <github-corners blank repo="xukaiyyds/domain-name"></github-corners>
-    <script async type="module" src="https://jsd.onmicrosoft.cn/npm/wc-github-corners@latest"></script>
+    <github-corners repo="xukaiyyds/domain-name" blank></github-corners>
+    <script type="module" src="https://jsd.onmicrosoft.cn/npm/wc-github-corners@latest" defer></script>
 </body>
 
 </html>
