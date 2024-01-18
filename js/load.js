@@ -1,5 +1,5 @@
 const bg = document.querySelector(".bg");
-const loadText = document.querySelector(".loading-text");
+const loadText = document.querySelector(".load-text");
 const container = document.querySelector(".container");
 const githubCorners = document.querySelector("github-corners");
 
