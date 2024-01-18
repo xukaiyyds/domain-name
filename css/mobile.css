@@ -1,0 +1,27 @@
+@media (max-width: 800px) {
+    .load-text {
+        font-size: 32px;
+    }
+
+    .container {
+        width: 96%;
+        padding: 20px;
+    }
+
+    .logo {
+        height: 32px;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    th,
+    td {
+        padding: 6px;
+    }
+
+    th {
+        width: 50%;
+    }
+}

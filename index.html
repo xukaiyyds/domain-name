@@ -5,55 +5,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="xukaiyyds">
-    <meta name="description" content="一个动态的顶级国际域名证书模板。">
+    <meta name="description" content="一个简约的顶级国际域名证书模板。">
     <title>顶级国际域名证书 - 高仿版</title>
-    <!-- 因为没找到合适的logo，这里就先用腾讯云的顶上，也不知道算不算侵权⌇●﹏●⌇ -->
-    <link rel="icon" href="img/favicon.ico">
+    <!-- icon link -->
+    <link rel="apple-touch-icon" sizes="180x180" href="img/icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/icon/favicon-16x16.png">
+    <!-- css link -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/load.css">
-    <link rel="stylesheet" href="css/minireset.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <link rel="stylesheet" href="css/animation.css">
 </head>
 
 <body>
     <section class="bg"></section>
-    <section class="loading-text time">0%</section>
-    <main class="container">
+    <section class="load-text">0%</section>
+    <main class="container" style="display: none;">
         <header>
+            <div class="logo"></div>
             <h1 class="title">中国国家顶级域名注册证书</h1>
-            <div class="divider"></div>
         </header>
-        <p class="describe">域名 <a href="https://www.xukaiyyds.cn" class="link" target="_blank">xukaiyyds.cn</a> 已由 <a
-                href="img/xukaiyyds.cn.certificate.jpg" class="link" target="_blank">徐凯</a> 完成注册，并已在国际顶级域名数据库中记录。</p>
-        <article class="info">
-            <div class="info-item">
-                <div class="label bt-no">域名</div>
-                <div class="value bt-no">xukaiyyds.cn</div>
-            </div>
-            <div class="info-item">
-                <div class="label">域名所有者</div>
-                <div class="value">徐凯</div>
-            </div>
-            <div class="info-item">
-                <div class="label">域名所属注册机构</div>
-                <div class="value">广州云讯信息科技有限公司</div>
-            </div>
-            <div class="info-item">
-                <div class="label">域名注册时间</div>
-                <div class="value time describe">2021-10-16 21:45:32</div>
-            </div>
-            <div class="info-item">
-                <div class="label">域名到期时间</div>
-                <div class="value time describe">2026-10-16 21:45:32</div>
-            </div>
-            <div class="info-item">
-                <div class="label">域名续费倒计时</div>
-                <div class="value time describe">
-                    <span id="countdown"></span>
-                </div>
-            </div>
+        <div class="divider"></div>
+        <article>
+            <p class="describe">
+                域名
+                <a class="link" href="https://www.xukaiyyds.cn" target="_blank">xukaiyyds.cn</a>
+                已由
+                <a class="link" href="img/certificate/xukaiyyds.cn.certificate.jpg" target="_blank">徐凯</a>
+                完成注册，并已在国际顶级域名数据库中记录。
+            </p>
+            <table>
+                <tr>
+                    <th>域名</th>
+                    <td>xukaiyyds.cn</td>
+                </tr>
+                <tr>
+                    <th>域名所有者</th>
+                    <td>徐凯</td>
+                </tr>
+                <tr>
+                    <th>域名所属注册机构</th>
+                    <td>广州云讯信息科技有限公司</td>
+                </tr>
+                <tr>
+                    <th>域名注册时间</th>
+                    <td class="time">2021-10-16 21:45:32</td>
+                </tr>
+                <tr>
+                    <th>域名到期时间</th>
+                    <td class="time">2026-10-16 21:45:32</td>
+                </tr>
+                <tr>
+                    <th>域名续费倒计时</th>
+                    <td class="time"><span id="countdown"></span></td>
+                </tr>
+            </table>
         </article>
-        <footer class="cloud-info">
-            <a href="https://cloud.tencent.com" class="link" target="_blank">腾讯云</a>
+        <footer class="footer">
+            <a class="link" href="https://cloud.tencent.com" target="_blank">腾讯云</a>
             <p>证书打印日期：<span id="print"></span></p>
         </footer>
     </main>
@@ -61,12 +73,13 @@
     <script>
         let target = new Date("2026/10/16 21:45:32"); // 设置你的域名过期时间
     </script>
+    <!-- js link -->
     <script src="js/load.js" defer></script>
     <script src="js/time.js" defer></script>
     <script src="js/script.js" defer></script>
 
     <!-- github link -->
-    <github-corners repo="xukaiyyds/domain-name" blank></github-corners>
+    <github-corners repo="xukaiyyds/domain-name" blank style="display: none;"></github-corners>
     <script type="module" src="https://jsd.onmicrosoft.cn/npm/wc-github-corners@latest" defer></script>
 </body>
 

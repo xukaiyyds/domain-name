@@ -1,136 +1,66 @@
-@font-face {
-    font-family: "font";
-    src: url("../font/HarmonyOS_Sans_SC_Medium.woff2");
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "fonts";
-    src: url("../font/UnidreamLED.ttf");
-    font-display: swap;
-}
-
-body {
-    font-family: 'font';
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    user-select: none;
-}
-
 .container {
-    display: none;
-    padding: 45px 65px;
-    max-width: 800px;
-    min-width: 360px;
-    width: 95%;
-    border-radius: 10px;
-    color: #fff;
-    background: rgba(120, 129, 147, .3);
-    box-shadow: 0 0 10px 0 #020101;
-    backdrop-filter: blur(10px);
+  width: 800px;
+  padding: 60px;
+  border-radius: 10px;
+  /* background-color: rgba(21, 21, 21, 0.6); */
+  background-color: rgba(120, 129, 147, 0.4);
+  /* box-shadow: 0 0 10px 0 #788193; */
+  box-shadow: 0 0 10px 0 #151515;
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  height: 40px;
+  background: url(../img/dragon.svg) center no-repeat;
 }
 
 .title {
-    font-size: 30px;
-    text-align: center;
+  font: 32px/2 '汉仪霹雳体简';
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .divider {
-    height: 2px;
-    margin: 20px 0;
-    background-color: #fff;
-    overflow: hidden;
+  height: 2px;
+  margin: 10px 0 20px;
+  background-color: #e1e1e1;
 }
 
 .describe {
-    font-size: 18px;
+  font-size: 18px;
+  letter-spacing: 1px;
 }
 
 .link {
-    color: #F4F5FB;
+  color: #fff;
 }
 
 .link:hover {
-    text-decoration: none;
-}
-
-.info {
-    margin-top: 20px;
-    border: 1px solid #e1e1e1;
-}
-
-.info-item {
-    display: flex;
-}
-
-.label,
-.value {
-    display: flex;
-    align-items: center;
-    border-top: 1px solid #e1e1e1;
-}
-
-.bt-no {
-    border-top: none;
-}
-
-.label {
-    padding: 12px 20px;
-    width: 170px;
-    border-right: 1px solid #e1e1e1;
-    font-weight: bold;
-}
-
-.value {
-    flex: 1;
-    padding: 12px 20px;
+  text-decoration: none;
 }
 
 .time {
-    font-family: 'fonts';
-    letter-spacing: 2px;
+  font-family: "液晶电子表";
+  letter-spacing: 2px;
 }
 
-.cloud-info {
-    margin-top: 10px;
-    text-align: right;
-    font-size: 14px;
-    color: #fff;
+.footer {
+  margin-top: 10px;
+  text-align: right;
+  font-size: 14px;
 }
 
-.cloud-info a {
-    text-decoration: none;
+.footer a {
+  text-decoration: none;
 }
 
-.cloud-info a:hover {
-    color: #409EFF;
+.footer a:hover {
+  color: #409eff;
 }
 
-.cloud-info p {
-    margin-top: 6px;
-    font-size: 12px;
-}
-
-github-corners {
-    display: none;
-}
-
-@media (max-width: 800px) {
-    .container {
-        padding: 20px;
-    }
-}
-
-@keyframes blink {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
+.footer p {
+  margin-top: 6px;
+  font-size: 12px;
 }

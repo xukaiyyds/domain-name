@@ -1,15 +1,14 @@
 .bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    background: #0f1214 url(../img/bg.png) center center/cover no-repeat fixed;
-    filter: blur(0px);
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  background: #151515 url(../img/bg.png) center center/cover no-repeat;
+  filter: blur(0px);
 }
 
-.loading-text {
-    font-size: 50px;
-    color: #fff;
+.load-text {
+  font: 48px "液晶电子表";
 }
