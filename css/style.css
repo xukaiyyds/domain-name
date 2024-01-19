@@ -38,7 +38,7 @@
 }
 
 .link:hover {
-  text-decoration: none;
+  border-bottom: 1px solid;
 }
 
 .time {
@@ -52,11 +52,8 @@
   font-size: 14px;
 }
 
-.footer a {
-  text-decoration: none;
-}
-
 .footer a:hover {
+  border-bottom: 0;
   color: #409eff;
 }
 
