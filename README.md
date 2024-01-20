@@ -2,27 +2,27 @@
 
 ### 简介
 
-一个简约的高仿版顶级国际域名证书，方便自己或他人随时随地的查看你的域名注册时间以及到期时间。
+一个简约的高仿版顶级国际域名证书，方便自己或他人随时查看你的域名到期时间。
 
-域名到期前：
+<small>域名到期前：</small>
 
 ![](./screenshots/default.png)
 
-域名到期前一个月：
+<small>域名到期前一个月：</small>
 
 ![](./screenshots/primary.png)
 
-域名到期前一个星期：
+<small>域名到期前一个星期：</small>
 
 ![](./screenshots/warning.png)
 
-域名到期后：
+<small>域名到期后：</small>
 
 ![](./screenshots/danger.png)
 
-当然，你也可以考虑将它放入到你的个人主页或个人博客的页脚信息中，到时候好有人能够及时提醒你续费（bushi）。
+当然，你也可以考虑像我一样，将它放入到你的个人主页或个人博客的页脚信息中，相信我，到时候会有好心人来提醒你及时续费的（bushi）。
 
-咳咳，是及时续费还是及时止损？这是个问题！
+咳咳，是及时续费还是及时止损？这是个值得我们思考的问题！
 
 ### 预览
 
@@ -48,7 +48,7 @@ git clone git@github.com:xukaiyyds/domain-name.git
 
 ### 鸣谢
 
-想法灵感来源于[腾讯云](https://cloud.tencent.com)的[中国国家顶级域名注册证书](img/certificate/xukaiyyds.cn.certificate.jpg)
+项目灵感来源于[腾讯云](https://cloud.tencent.com)的[中国国家顶级域名注册证书](img/certificate/xukaiyyds.cn.certificate.jpg)和[顶级国际域名证书](img/certificate/xukaiyyds.cn.old-certificate.jpg)。
 
 设计灵感借鉴于：
 
