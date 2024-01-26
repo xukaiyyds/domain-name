@@ -12,18 +12,16 @@
     <link rel="icon" type="image/png" sizes="32x32" href="img/icon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/icon/favicon-16x16.png">
     <!-- css link -->
-    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/minireset.css">
     <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/load.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/mobile.css">
-    <link rel="stylesheet" href="css/animation.css">
     <link rel="stylesheet" href="css/mend.css">
 </head>
 
 <body>
     <div class="bg"></div>
-    <div class="load-text">0%</div>
+    <div class="load-text digit">0%</div>
     <main class="container">
         <header>
             <div class="logo"></div>
@@ -52,34 +50,113 @@
             </tr>
             <tr>
                 <th>域名注册时间</th>
-                <td class="time">2021-10-16 21:45:32</td>
+                <td class="digit">2021-10-16 21:45:32</td>
             </tr>
             <tr>
                 <th>域名到期时间</th>
-                <td class="time">2026-10-16 21:45:32</td>
+                <td class="digit">2026-10-16 21:45:32</td>
+            </tr>
+            <tr>
+                <th>域名使用总时长</th>
+                <td class="digit">
+                    <div id="timer"></div>
+                </td>
             </tr>
             <tr>
                 <th>域名续费倒计时</th>
-                <td class="time"><span id="countdown"></span></td>
+                <td class="digit"><span id="countdown"></span></td>
             </tr>
         </table>
         <footer class="footer">
-            <a class="link" href="https://cloud.tencent.com" target="_blank">腾讯云</a>
+            <a href="https://cloud.tencent.com" target="_blank">腾讯云</a>
             <p>证书打印日期：<span id="print"></span></p>
         </footer>
     </main>
 
+    <!-- 请在下面自行修改你的域名时间 -->
     <script>
-        let target = new Date("2026/10/16 21:45:32"); // 设置你的域名过期时间
+        let start = new Date("2021-10-16 21:45:32"); // 域名注册时间
+        let end = new Date("2026-10-16 21:45:32"); // 域名到期时间
     </script>
-    <!-- js link -->
-    <script src="js/load.js" defer></script>
-    <script src="js/time.js" defer></script>
-    <script src="js/script.js" defer></script>
 
-    <!-- github link -->
-    <github-corners repo="xukaiyyds/domain-name" blank></github-corners>
-    <script type="module" src="https://jsd.onmicrosoft.cn/npm/wc-github-corners@latest"></script>
+    <!-- Darkmode.js -->
+    <script src="https://jsd.onmicrosoft.cn/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <script>
+        function addDarkmodeWidget() {
+            // 配置项：
+            const options = {
+                bottom: '16px', // 定位底部距离 default: '32px'
+                right: '8px', // 定位右边距离 default: '32px'
+                left: 'unset', // 定位左边距离 default: 'unset'
+                time: '0s', // 默认动画时间 default: '0.3s'
+                mixColor: '#fff', // 需要改变的颜色 default: '#fff'
+                backgroundColor: '#fff', // 背景颜色 default: '#fff'
+                buttonColorDark: '#f3f5f8', // 黑暗模式下按钮颜色 default: '#100f2c'
+                buttonColorLight: '#151513', // 日间模式下按钮颜色 default: '#fff'
+                saveInCookies: true, // 是否在cookie保存当前模式 default: true,
+                label: '', // 切换模式按钮图标 default: ''
+                autoMatchOsTheme: true // 是否自动根据系统适应模式 default: true
+            }
+
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget(); // 启用暗模式
+            // darkmode.toggle(); // 禁用暗模式
+            // console.log(darkmode.isActivated()) // 将返回true
+
+            const darkmodeToggle = document.querySelector('.darkmode-toggle');
+            const logo = document.querySelector('.logo');
+
+            switchState();
+
+            function switchState() {
+                // 切换label
+                if (darkmode.isActivated()) {
+                    darkmodeToggle.textContent = "🌙";
+                } else {
+                    darkmodeToggle.textContent = "☀️";
+                }
+                // 切换logo
+                if (darkmode.isActivated()) {
+                    logo.style.backgroundImage = 'url(img/svg/dragon-black.svg)';
+                } else {
+                    logo.style.backgroundImage = 'url(img/svg/dragon-white.svg)';
+                }
+            }
+
+            darkmodeToggle.addEventListener('click', function () {
+                switchState();
+            })
+        }
+        window.addEventListener('load', addDarkmodeWidget);
+    </script>
+
+    <!-- 开源不易，以下信息请不要修改哦 -->
+    <a href="https://github.com/xukaiyyds/domain-name" target="_blank" class="github-corner"
+        aria-label="View source on GitHub">
+        <svg width="3rem" height="3rem" viewBox="0 0 250 250"
+            style="fill:#151513; color:#f3f5f8; position: absolute; top: 0; right: 0; border: 0;" aria-hidden="true">
+            <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+            <path
+                d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+                fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+            <path
+                d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+                fill="currentColor" class="octo-body"></path>
+        </svg>
+    </a>
+
+    <script>
+        console.log(
+            "%c 顶级国际域名证书 %c Made by xukaiyyds %c",
+            "background:#35495e ; padding: 1px; border-radius: 3px 0 0 3px;  color: #fff",
+            "background:#41b883 ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff",
+            "background:transparent"
+        );
+    </script>
+
+    <!-- js link -->
+    <script src="js/load.js" async></script>
+    <script src="js/time.js" defer></script>
 </body>
 
 </html>

@@ -1,7 +1,7 @@
 const bg = document.querySelector(".bg");
 const loadText = document.querySelector(".load-text");
 const container = document.querySelector(".container");
-const githubCorners = document.querySelector("github-corners");
+const githubCorner = document.querySelector(".github-corner");
 
 let load = 0;
 
@@ -14,7 +14,7 @@ function blurring() {
     clearInterval(int);
     loadText.style.display = "none";
     container.style.cssText = "display: block; animation: blink 1s;";
-    githubCorners.style.cssText = "display: block; animation: blink 2s;";
+    githubCorner.style.cssText = "display: block; animation: blink 2s;";
   }
 
   loadText.innerText = `${load}%`;

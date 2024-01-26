@@ -19,14 +19,14 @@
 html,
 body {
   height: 100%;
-  font: 16px/1.5 "HarmonyOS";
 }
 
 body {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fefefe;
+  font: 16px/1.5 "HarmonyOS";
+  cursor: url("../img/cursor/normal.cur"), auto;
   user-select: none;
 }
 
@@ -34,6 +34,8 @@ table {
   margin-top: 20px;
   width: 100%;
   table-layout: fixed;
+  cursor: url("../img/cursor/text.cur"), text;
+  user-select: text;
 }
 
 th,
@@ -49,4 +51,9 @@ th {
 
 a {
   text-decoration: none;
+}
+
+a:hover,
+button:hover {
+  cursor: url("../img/cursor/Link.cur"), pointer;
 }

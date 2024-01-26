@@ -1,32 +1,46 @@
+.bg {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  background: #000 url("../img/bg.png") center center/cover no-repeat;
+}
+
+.load-text {
+  font-size: 2rem;
+  color: #fff;
+  isolation: isolate;
+}
+
 .container {
   display: none;
-  width: 800px;
+  max-width: 900px;
   padding: 60px;
   border-radius: 10px;
-  /* background-color: rgba(21, 21, 21, 0.6); */
-  background-color: rgba(120, 129, 147, 0.4);
-  /* box-shadow: 0 0 10px 0 #788193; */
-  box-shadow: 0 0 10px 0 #151515;
+  color: #fefefe;
+  background-color: rgba(21, 21, 19, 0.6);
+  box-shadow: 0 0 10px 0 #788193;
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
 
 .logo {
   height: 40px;
-  background: url(../img/dragon.svg) center no-repeat;
+  background: url("../img/svg/dragon-white.svg") center no-repeat;
 }
 
 .title {
-  font: 32px/2 '汉仪霹雳体简';
+  font: 32px/2 "汉仪霹雳体简";
   text-align: center;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  color: #fff;
 }
 
 .divider {
   height: 2px;
   margin: 10px 0 20px;
-  background-color: #e1e1e1;
+  background-color: #eaecef;
 }
 
 .describe {
@@ -34,14 +48,15 @@
 }
 
 .link {
-  color: #fff;
+  color: #eee;
 }
 
 .link:hover {
-  border-bottom: 1px solid;
+  padding-bottom: 1px;
+  border-bottom: 1px dashed;
 }
 
-.time {
+.digit {
   font-family: "液晶电子表";
   letter-spacing: 2px;
 }
@@ -49,15 +64,19 @@
 .footer {
   margin-top: 10px;
   text-align: right;
+}
+
+.footer a {
   font-size: 14px;
+  color: #0366d6;
 }
 
 .footer a:hover {
-  border-bottom: 0;
-  color: #409eff;
+  color: #30a9de;
 }
 
 .footer p {
   margin-top: 6px;
   font-size: 12px;
+  color: #718096;
 }

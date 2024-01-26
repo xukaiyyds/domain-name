@@ -1,27 +1,73 @@
-@media (max-width: 800px) {
-    .load-text {
-        font-size: 32px;
-    }
-
-    .container {
-        width: 96%;
-        padding: 20px;
-    }
-
-    .logo {
-        height: 32px;
-    }
-
-    .title {
-        font-size: 24px;
-    }
-
-    th,
-    td {
-        padding: 6px;
-    }
-
-    th {
-        width: 50%;
-    }
+html {
+  font-size: 16px;
+}
+@media screen and (min-width: 375px) {
+  html {
+    /* iPhone6的375px尺寸作为16px基准，414px正好18px大小, 600 20px */
+    font-size: calc(100% + 2 * (100vw - 375px) / 39);
+    font-size: calc(16px + 2 * (100vw - 375px) / 39);
+  }
+}
+@media screen and (min-width: 414px) {
+  html {
+    /* 414px-1000px每100像素宽字体增加1px(18px-22px) */
+    font-size: calc(112.5% + 4 * (100vw - 414px) / 586);
+    font-size: calc(18px + 4 * (100vw - 414px) / 586);
+  }
+}
+@media screen and (min-width: 600px) {
+  html {
+    /* 600px-1000px每100像素宽字体增加1px(20px-24px) */
+    font-size: calc(125% + 4 * (100vw - 600px) / 400);
+    font-size: calc(20px + 4 * (100vw - 600px) / 400);
+  }
+}
+@media screen and (min-width: 1000px) {
+  html {
+    /* 1000px往后是每100像素0.5px增加 */
+    font-size: calc(137.5% + 6 * (100vw - 1000px) / 1000);
+    font-size: calc(22px + 6 * (100vw - 1000px) / 1000);
+  }
+}
+@media screen and (max-width: 960px) and (orientation: portrait) {
+  .bg {
+    background-size: 50rem;
+  }
+  .container {
+    overflow: auto;
+    height: 100%;
+    min-width: 260px;
+    padding: 1.25rem;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .logo {
+    height: 2rem;
+  }
+  .title {
+    font-size: 1.5rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .divider {
+    height: 0.125rem;
+  }
+  .describe {
+    font-size: 1.125rem;
+  }
+  body {
+    font-size: 1rem;
+  }
+  table {
+    user-select: none;
+  }
+  th,
+  td {
+    padding: 0.375rem;
+    border: 0.0625rem solid #e1e1e1;
+  }
+  th {
+    width: 50%;
+  }
 }
