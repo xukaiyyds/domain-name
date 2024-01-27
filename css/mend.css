@@ -32,6 +32,11 @@
   display: none;
 }
 
+.github-corner svg {
+  width: 3rem;
+  height: 3rem;
+}
+
 .github-corner:hover .octo-arm {
   animation: octocat-wave 560ms ease-in-out;
 }
