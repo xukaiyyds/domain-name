@@ -2,7 +2,7 @@
   /* 域名使用总时长 */
   function updateTimer() {
     let now = new Date();
-    let timeDiff = now - start;
+    let timeDiff = now - startTime;
     let days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
     let years = Math.floor(days / 365);
     let months = Math.floor((days % 365) / 30); // 大约几个月
@@ -39,7 +39,7 @@
     document.getElementById("print").innerHTML =
       year + " 年 " + month + " 月 " + date + " 日";
     let currentTime = current.getTime();
-    let targetTime = end.getTime();
+    let targetTime = endTime.getTime();
     let remainingTime = targetTime - currentTime;
 
     /* 将毫秒转换为天、小时、分钟和秒 */
