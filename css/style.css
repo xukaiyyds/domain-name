@@ -74,6 +74,10 @@
   color: #fff;
 }
 
+.logo {
+  line-height: 0;
+}
+
 .logo .icon-dragon {
   font-size: 40px;
 }
@@ -100,6 +104,10 @@
 .link:hover {
   padding-bottom: 1px;
   border-bottom: 1px dashed;
+}
+
+.info {
+  height: 317px;
 }
 
 .digit {
