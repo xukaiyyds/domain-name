@@ -1,21 +1,3 @@
-@font-face {
-  font-family: "液晶电子表";
-  src: url("../font/UnidreamLED.ttf");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "HarmonyOS";
-  src: url("../font/HarmonyOS_Sans_SC_Medium.woff2");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "汉仪霹雳体简";
-  src: url("../font/汉仪霹雳体简.woff");
-  font-display: swap;
-}
-
 html,
 body {
   height: 100%;
@@ -31,11 +13,9 @@ body {
 }
 
 table {
-  margin-top: 20px;
   width: 100%;
   table-layout: fixed;
   cursor: url("../img/cursor/text.cur"), text;
-  user-select: text;
 }
 
 th,
@@ -54,6 +34,7 @@ a {
 }
 
 a:hover,
-button:hover {
+button:hover,
+.loaded:hover {
   cursor: url("../img/cursor/Link.cur"), pointer;
 }

@@ -13,6 +13,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="img/icon/favicon-16x16.png">
     <!-- css link -->
     <link rel="stylesheet" href="css/minireset.css">
+    <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/mobile.css">
@@ -21,19 +22,21 @@
 
 <body>
     <div class="bg"></div>
-    <div class="load-text digit">0%</div>
+    <div class="loaded">
+        <div class="load-text digit">0%</div>
+        <div class="twinkle">点击任意处关闭</div>
+    </div>
     <main class="container">
-        <header>
-            <div class="logo"></div>
-            <h1 class="title">中国国家顶级域名注册证书</h1>
+        <header class="header">
+            <div class="logo"><i class="iconfont icon-dragon"></i></div>
+            <h1 class="title"></h1>
         </header>
         <div class="divider"></div>
         <p class="describe">
             域名
-            <a class="link" href="https://www.xukaiyyds.cn" target="_blank"><span class="domain"></span></a>
+            <a class="link" target="_blank"><span class="domain"></span></a>
             已由
-            <a class="link" href="img/certificate/xukaiyyds.cn.certificate.jpg" target="_blank"><span
-                    class="name"></span></a>
+            <a class="link" target="_blank"><span class="name"></span></a>
             完成注册，并已在国际顶级域名数据库中记录。
         </p>
         <table>
@@ -59,9 +62,7 @@
             </tr>
             <tr>
                 <th>域名使用总时长</th>
-                <td class="digit">
-                    <div id="timer"></div>
-                </td>
+                <td class="digit"><span id="timer"></span></td>
             </tr>
             <tr>
                 <th>域名续费倒计时</th>
@@ -69,23 +70,43 @@
             </tr>
         </table>
         <footer class="footer">
-            <a href="https://cloud.tencent.com" target="_blank">腾讯云</a>
-            <p>证书打印日期：<span id="print"></span></p>
+            <a class="cloud" target="_blank"></a>
+            <p class="print">证书打印日期：<span id="print"></span></p>
+            <div class="beian">
+                备案号：<a class="filings" target="_blank"></a>
+            </div>
         </footer>
     </main>
 
     <!-- 请在下面自行修改你的域名信息 -->
     <script>
+        document.querySelector('.title').textContent = '中国国家顶级域名注册证书'; // 证书名称
         for (let i = 0; i < 2; i++) {
             document.querySelectorAll('.domain')[i].textContent = 'xukaiyyds.cn'; // 域名
             document.querySelectorAll('.name')[i].textContent = '徐凯'; // 域名所有者
         }
+        document.querySelectorAll('.link')[0].href = 'https://xukaiyyds.cn'; // 站点链接
+        document.querySelectorAll('.link')[1].href = 'img/certificate/xukaiyyds.cn.certificate.jpg'; // 证书链接
         document.querySelector('.company').textContent = '广州云讯信息科技有限公司'; // 域名所属注册机构
         const startTime = new Date("2021-10-16T21:45:32"); // 域名注册时间
         const endTime = new Date("2026-10-16T21:45:32"); // 域名到期时间
         document.querySelector('.start').textContent = startTime.toLocaleString().replace(/\//g, '-');
         document.querySelector('.end').textContent = endTime.toLocaleString().replace(/\//g, '-');
+        // 域名服务商
+        const cloud = document.querySelector('.cloud');
+        cloud.textContent = '腾讯云';
+        cloud.href = 'https://cloud.tencent.com';
+        // 域名备案号
+        const filings = document.querySelector('.filings');
+        filings.textContent = ''; // 如果没有备案，可以不填
+        filings.href = 'https://beian.miit.gov.cn';
+        if (filings.textContent.trim() == '') {
+            document.querySelector('.beian').classList.add('display-none');
+        }
     </script>
+
+    <!-- Pace.js -->
+    <script src="https://jsd.onmicrosoft.cn/npm/pace-js@latest/pace.min.js"></script>
 
     <!-- Darkmode.js -->
     <script src="https://jsd.onmicrosoft.cn/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
@@ -117,17 +138,10 @@
             switchState();
 
             function switchState() {
-                // 切换label
                 if (darkmode.isActivated()) {
                     darkmodeToggle.textContent = "🌙";
                 } else {
                     darkmodeToggle.textContent = "☀️";
-                }
-                // 切换logo
-                if (darkmode.isActivated()) {
-                    logo.style.backgroundImage = 'url(img/svg/dragon-black.svg)';
-                } else {
-                    logo.style.backgroundImage = 'url(img/svg/dragon-white.svg)';
                 }
             }
 
@@ -139,10 +153,10 @@
     </script>
 
     <!-- 开源不易，以下信息请不要修改哦 -->
-    <a href="https://github.com/xukaiyyds/domain-name" target="_blank" class="github-corner"
-        aria-label="View source on GitHub">
+    <a href="https://github.com/xukaiyyds/domain-name" class="github-corner" target="_blank"
+        aria-label="在 GitHub 上查看源代码">
         <svg viewBox="0 0 250 250"
-            style="position: absolute; top: 0; right: 0; width: 3rem; height: 3rem; border: 0; color:#f3f5f8; fill:#151513;"
+            style="position: fixed; top: 0; right: 0; width: 3rem; height: 3rem; border: 0; color:#f3f5f8; fill:#151513;"
             aria-hidden="true">
             <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
             <path
@@ -157,9 +171,9 @@
     <script>
         console.log(
             "%c 顶级国际域名证书 %c Made by xukaiyyds %c",
-            "background:#35495e ; padding: 1px; border-radius: 3px 0 0 3px;  color: #fff",
-            "background:#41b883 ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff",
-            "background:transparent"
+            "background: #35495e; padding: 1px; border-radius: 3px 0 0 3px; color: #fff",
+            "background: #41b883; padding: 1px; border-radius: 0 3px 3px 0; color: #fff",
+            "background: transparent"
         );
     </script>
 

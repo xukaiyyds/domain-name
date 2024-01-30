@@ -1,27 +1,29 @@
-const bg = document.querySelector(".bg");
+const loaded = document.querySelector(".loaded");
 const loadText = document.querySelector(".load-text");
 const container = document.querySelector(".container");
-const githubCorner = document.querySelector(".github-corner");
 
 let load = 0;
 
-let int = setInterval(blurring, 30);
+let loading = setInterval(blurring, 30);
 
 function blurring() {
   load++;
+  loadText.innerText = `${load}%`;
+  loadText.style.opacity = scale(load, 0, 100, 1, 0);
 
   if (load > 99) {
-    clearInterval(int);
-    loadText.style.display = "none";
-    container.style.cssText = "display: block; animation: blink 1s;";
-    githubCorner.style.cssText = "display: block; animation: blink 2s;";
+    clearInterval(loading);
+    loaded.classList.add("display-none");
+    container.classList.add("display-block");
+    container.style.cssText = "animation: smooth 1s;";
   }
 
-  loadText.innerText = `${load}%`;
-  loadText.computedStyleMap.opacity = scale(load, 0, 100, 1, 0);
-  bg.style.filter = `blur(${scale(load, 0, 100, 30, 0)}px)`;
+  loaded.addEventListener("click", () => {
+    load = 100;
+  });
 }
 
+// https://stackoverflow.com/questions/10756313/javascript-jquery-map-a-range-of-numbers-to-another-range-of-numbers
 const scale = (num, in_min, in_max, out_min, out_max) => {
   return ((num - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min;
 };
