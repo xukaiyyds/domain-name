@@ -29,9 +29,9 @@ html {
     font-size: calc(22px + 6 * (100vw - 1000px) / 1000);
   }
 }
-@media screen and (max-width: 960px) and (orientation: portrait) {
+@media screen and (max-width: 900px), screen and (orientation: portrait) {
   .bg {
-    background-size: 50rem;
+    background-size: 48.75rem;
   }
   .container {
     overflow: auto;
@@ -41,8 +41,8 @@ html {
     border-radius: 0;
     box-shadow: none;
   }
-  .logo {
-    height: 2rem;
+  .logo .icon-dragon {
+    font-size: 2rem;
   }
   .title {
     font-size: 1.5rem;
@@ -50,24 +50,26 @@ html {
     white-space: nowrap;
     text-overflow: ellipsis;
   }
-  .divider {
-    height: 0.125rem;
-  }
   .describe {
     font-size: 1.125rem;
   }
   body {
     font-size: 1rem;
   }
-  table {
-    user-select: none;
-  }
   th,
   td {
     padding: 0.375rem;
-    border: 0.0625rem solid #e1e1e1;
   }
   th {
     width: 50%;
+  }
+  .footer {
+    padding-top: 10px;
+  }
+  .beian {
+    top: 10px;
+  }
+  .pace .pace-progress {
+    height: 2px;
   }
 }

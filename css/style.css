@@ -5,13 +5,56 @@
   top: 0;
   bottom: 0;
   z-index: -1;
-  background: #000 url("../img/bg.png") center center/cover no-repeat;
+  background: #000 url("../img/bg.png") center/cover no-repeat;
+}
+
+.loaded {
+  position: relative;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #151513;
 }
 
 .load-text {
   font-size: 2rem;
   color: #fff;
-  isolation: isolate;
+  /* isolation: isolate; */
+}
+
+.twinkle {
+  position: absolute;
+  bottom: 1rem;
+  font-size: 12px;
+  color: #c4c6c9;
+  animation: blink 1.8s infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 0.6;
+  }
+
+  100% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes smooth {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .container {
@@ -26,24 +69,27 @@
   backdrop-filter: blur(10px);
 }
 
-.logo {
-  height: 40px;
-  background: url("../img/svg/dragon-white.svg") center no-repeat;
-}
-
-.title {
-  font: 32px/2 "汉仪霹雳体简";
+.header {
   text-align: center;
   color: #fff;
 }
 
+.logo .icon-dragon {
+  font-size: 40px;
+}
+
+.title {
+  font: 32px/2 "汉仪霹雳体简";
+}
+
 .divider {
   height: 2px;
-  margin: 10px 0 20px;
+  margin: 10px 0;
   background-color: #eaecef;
 }
 
 .describe {
+  padding: 10px 0;
   font-size: 18px;
 }
 
@@ -62,21 +108,39 @@
 }
 
 .footer {
-  margin-top: 10px;
+  position: relative;
+  padding-top: 45px;
   text-align: right;
-}
-
-.footer a {
-  font-size: 14px;
-  color: #0366d6;
+  font-size: 12px;
+  color: #718096;
 }
 
 .footer a:hover {
   color: #30a9de;
 }
 
-.footer p {
+.beian {
+  position: absolute;
+  bottom: 0;
+}
+
+.filings {
+  color: #d0d0d0;
+}
+
+.cloud {
+  font-size: 14px;
+  color: #1589e9;
+}
+
+.print {
   margin-top: 6px;
-  font-size: 12px;
-  color: #718096;
+}
+
+.display-none {
+  display: none;
+}
+
+.display-block {
+  display: block;
 }
