@@ -1,6 +1,6 @@
 @font-face {
   font-family: "液晶电子表";
-  src: url("../font/UnidreamLED.ttf");
+  src: url("../font/UnidreamLED.woff2");
   font-display: swap;
 }
 
@@ -12,7 +12,7 @@
 
 @font-face {
   font-family: "汉仪霹雳体简";
-  src: url("../font/汉仪霹雳体简.woff");
+  src: url("../font/汉仪霹雳体简.woff2");
   font-display: swap;
 }
 
