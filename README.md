@@ -30,9 +30,8 @@
 
 ### 预览
 
-<https://count.xukaiyyds.cn>
-
-如果上面的站点打不开，你也可以选择预览[视频](https://www.awesomescreenshot.com/video/24395443?key=0e215997e449478b20722e7017e24efc)。
+- [Demo1 - Vercel 线路](https://domain.xukaiyyds.cn)
+- [Demo2 - Netlify 线路](https://count.xukaiyyds.cn)
 
 ### 使用
 
