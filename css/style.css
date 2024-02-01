@@ -83,7 +83,7 @@
 }
 
 .title {
-  font: 32px/2 "汉仪霹雳体简";
+  font: 32px/2 "汉仪霹雳体简", "HarmonyOS";
 }
 
 .divider {
@@ -111,7 +111,7 @@
 }
 
 .digit {
-  font-family: "液晶电子表";
+  font-family: "液晶电子表", "HarmonyOS";
   letter-spacing: 2px;
 }
 
