@@ -4,6 +4,9 @@
 
 ### 演示
 
+<details>
+<summary>点击展开</summary>
+
 浅色模式：
 
 ![](./img/screenshots/light.png)
@@ -24,14 +27,12 @@
 
 ![](./img/screenshots/danger.png)
 
-当然，你也可以考虑像我一样，将它放入到你的个人主页或个人博客中，相信我，到时候会有好心人来提醒你及时续费的（bushi）。
-
-咳咳，是及时续费还是及时止损？这是个值得我们认真思考的问题！
+</details>
 
 ### 预览
 
-- [Demo1 - Vercel 线路](https://domain.xukaiyyds.cn)
-- [Demo2 - Netlify 线路](https://count.xukaiyyds.cn)
+- [Demo1 - Netlify 正常线路](https://domains.xukaiyyds.cn)
+- [Demo2 - Vercel 备用线路](https://count.xukaiyyds.cn)
 
 ### 使用
 
@@ -50,6 +51,7 @@ git clone git@github.com:xukaiyyds/domain-name.git
 ### 功能
 
 - 深色模式 ✅
+- 分享证书
 - 中英文翻译
 - 个性化设置
   - 是否禁用深色模式
