@@ -16,6 +16,7 @@ table {
   width: 100%;
   table-layout: fixed;
   cursor: url("../img/cursor/text.cur"), text;
+  user-select: text;
 }
 
 th,
@@ -36,5 +37,5 @@ a {
 a:hover,
 button:hover,
 .loaded:hover {
-  cursor: url("../img/cursor/Link.cur"), pointer;
+  cursor: url("../img/cursor/link.cur"), pointer;
 }
