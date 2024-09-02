@@ -1,46 +1,37 @@
 (function () {
-  /* 域名使用总时长 */
+  /* 域名使用时长 */
   function updateTimer() {
-    let now = new Date();
-    let timeDiff = now - startTime;
-    let days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-    let years = Math.floor(days / 365);
-    let months = Math.floor((days % 365) / 30); // 大约几个月
-    let remainingDays = days - years * 365 - months * 30;
-    let hours = Math.floor(
-      (timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-    );
-    document.getElementById("timer").innerHTML =
-      years +
-      " 年 " +
-      months +
-      " 个月 " +
-      remainingDays +
-      " 天 " +
-      hours +
-      " 小时 ";
+    const currentDate = new Date();
+    const differenceInTime = currentDate.getTime() - startTime.getTime();
+    const differenceInDays = differenceInTime / (1000 * 3600 * 24);
+    const differenceInMonths = differenceInDays / 30;
+    const differenceInYears = differenceInMonths / 12;
+    const timer = document.getElementById("timer");
+    if (differenceInYears >= 1) {
+      return (timer.innerHTML = `${Math.floor(
+        differenceInYears
+      )} 年 ${Math.floor(differenceInMonths % 12)} 月 ${Math.round(
+        differenceInDays % 30
+      )} 天`);
+    } else if (differenceInMonths >= 1) {
+      return (timer.innerHTML = `${Math.floor(
+        differenceInMonths
+      )} 月 ${Math.round(differenceInDays % 30)} 天`);
+    } else {
+      return (timer.innerHTML = `${Math.round(differenceInDays)} 天`);
+    }
   }
 
   updateTimer();
   setInterval(updateTimer, 1000);
 
-  /* 域名续费倒计时 */
+  /* 域名剩余时长 */
   function updateCountdown() {
     let current = new Date();
-    let year = current.getFullYear();
-    let month = current.getMonth() + 1;
-    if (String(month).length === 1) {
-      month = "0" + month;
-    }
-    let date = current.getDate();
-    if (String(date).length === 1) {
-      date = "0" + date;
-    }
     let currentTime = current.getTime();
     let targetTime = endTime.getTime();
     let remainingTime = targetTime - currentTime;
 
-    /* 将毫秒转换为天、小时、分钟和秒 */
     let days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
     let hours = Math.floor(
       (remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
@@ -57,23 +48,18 @@
       seconds = "0" + seconds;
     }
 
-    document.getElementById("countdown").innerHTML =
-      days + " 天 " + hours + " 小时 " + minutes + " 分钟 " + seconds + " 秒";
-
+    let countdown = document.getElementById("countdown");
+    countdown.innerHTML = `${days} 天 ${hours} 小时 ${minutes} 分钟 ${seconds} 秒`;
     if (days < 30) {
-      document.getElementById("countdown").style.padding = "4px";
-      document.getElementById("countdown").style.backgroundColor = "#4772fa";
+      countdown.style.color = "#4772fa";
     }
-
     if (days < 7) {
-      document.getElementById("countdown").style.backgroundColor = "#ffb000";
+      countdown.style.color = "#ffb000";
     }
-
     if (remainingTime <= 0) {
       clearInterval(timer);
-      document.getElementById("countdown").textContent =
-        "倒计时结束，你该续费啦！";
-      document.getElementById("countdown").style.backgroundColor = "#e03131";
+      countdown.style.color = "#e03131";
+      countdown.textContent = "域名到期了，你该续费啦！";
     }
   }
 
