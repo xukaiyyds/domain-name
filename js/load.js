@@ -19,7 +19,8 @@ function blurring() {
   }
 
   loaded.addEventListener("click", () => {
-    load = 100;
+    document.querySelector(".twinkle").classList.add("display-none");
+    load = 90;
   });
 }
 
