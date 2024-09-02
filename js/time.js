@@ -36,8 +36,6 @@
     if (String(date).length === 1) {
       date = "0" + date;
     }
-    document.getElementById("print").innerHTML =
-      year + " 年 " + month + " 月 " + date + " 日";
     let currentTime = current.getTime();
     let targetTime = endTime.getTime();
     let remainingTime = targetTime - currentTime;

@@ -80,26 +80,27 @@
 
     <!-- 请在下面自行修改你的域名信息 -->
     <script>
-        document.querySelector('.title').textContent = '中国国家顶级域名注册证书'; // 证书名称
+        document.querySelector('.title').textContent = "中国国家顶级域名注册证书"; // 证书名称
         for (let i = 0; i < 2; i++) {
-            document.querySelectorAll('.domain')[i].textContent = 'xukaiyyds.cn'; // 域名
-            document.querySelectorAll('.name')[i].textContent = '徐凯'; // 域名所有者
+            document.querySelectorAll('.domain')[i].textContent = "xukaiyyds.cn"; // 域名
+            document.querySelectorAll('.name')[i].textContent = "徐凯"; // 域名所有者
         }
-        document.querySelectorAll('.link')[0].href = 'https://xukaiyyds.cn'; // 站点链接
-        document.querySelectorAll('.link')[1].href = 'img/certificate/xukaiyyds.cn.certificate.jpg'; // 证书链接
-        document.querySelector('.company').textContent = '广州云讯信息科技有限公司'; // 域名所属注册机构
+        document.querySelectorAll('.link')[0].href = "https://" + document.querySelector('.domain').textContent; // 站点链接
+        document.querySelectorAll('.link')[1].href = "img/certificate/xukaiyyds.cn.certificate.jpg"; // 证书链接
+        document.querySelector('.company').textContent = "广州云讯信息科技有限公司"; // 域名所属注册机构
         const startTime = new Date("2021-10-16T21:45:32"); // 域名注册时间
         const endTime = new Date("2026-10-16T21:45:32"); // 域名到期时间
         document.querySelector('.start').textContent = startTime.toLocaleString().replace(/\//g, '-');
         document.querySelector('.end').textContent = endTime.toLocaleString().replace(/\//g, '-');
         // 域名服务商
         const cloud = document.querySelector('.cloud');
-        cloud.textContent = '腾讯云';
-        cloud.href = 'https://cloud.tencent.com';
+        cloud.textContent = "腾讯云";
+        cloud.href = "https://cloud.tencent.com";
+        document.getElementById('print').textContent = "2023 年 10 月 17 日"; // 证书打印日期
         // 域名备案号
         const filings = document.querySelector('.filings');
-        filings.textContent = ''; // 如果没有备案，可以不填
-        filings.href = 'https://beian.miit.gov.cn';
+        filings.textContent = ""; // 如果没有备案，可以不填
+        filings.href = "https://beian.miit.gov.cn";
         if (filings.textContent.trim() == '') {
             document.querySelector('.beian').classList.add('display-none');
         }
