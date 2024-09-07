@@ -1,5 +1,5 @@
+/* 加载进度条 */
 .pace {
-  -webkit-pointer-events: none;
   pointer-events: none;
 }
 
@@ -14,9 +14,37 @@
   z-index: 99;
   width: 100%;
   height: 3px;
-  background-color: #f3f5f8;
+  background-color: #29d;
 }
 
+/* 源码链接按钮 */
+.github-corner svg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 3rem;
+  height: 3rem;
+  border: 0;
+  color: #f3f5f8;
+  fill: #151513;
+}
+
+/* 分享链接按钮 */
+.share-styles {
+  position: fixed;
+  left: 1rem;
+  bottom: 1rem;
+}
+
+.social-share .social-share-icon {
+  border: 0 !important;
+}
+
+.wechat-qrcode {
+  background-color: #252d38 !important;
+}
+
+/* 明暗切换按钮 */
 .darkmode-toggle {
   z-index: 1;
   padding: 0;
@@ -24,10 +52,7 @@
   box-shadow: 1px 1px 10px 0 rgba(55, 99, 170, 0.6);
 }
 
-.darkmode--activated .pace .pace-progress {
-  background-color: #151513;
-}
-
+/* 浅色模式适配 */
 .darkmode--activated .loaded {
   background-color: #f3f5f8;
 }
@@ -36,60 +61,44 @@
   color: #1a202c;
 }
 
+.darkmode--activated .container {
+  color: #181c27;
+  background-color: rgba(243, 245, 248, 0.6);
+}
+
 .darkmode--activated .load-text,
 .darkmode--activated .icon-dragon,
 .darkmode--activated .title {
   color: #000;
 }
 
-.darkmode--activated .container {
-  color: #181c27;
-  background-color: rgba(238, 238, 238, 0.6);
-}
-
-.darkmode--activated .divider {
-  background-color: #435266;
-}
-
+.darkmode--activated .icon-share,
+.darkmode--activated .icon-full-screen,
 .darkmode--activated .link {
-  color: #16181a;
+  color: #151513;
+}
+
+.darkmode--activated .header {
+  border-bottom-color: #16181a;
 }
 
 .darkmode--activated th,
 .darkmode--activated td {
-  border: 1px solid #718096;
+  border-color: #16181a;
 }
 
 .darkmode--activated .filings {
-  color: #2c3e50;
-}
-
-.darkmode--activated .cloud {
   color: #0366d6;
 }
 
-.github-corner:hover .octo-arm {
-  animation: octocat-wave 560ms ease-in-out;
+.darkmode--activated .cloud {
+  color: #2c3e50;
 }
-@keyframes octocat-wave {
-  0%,
-  100% {
-    transform: rotate(0);
-  }
-  20%,
-  60% {
-    transform: rotate(-25deg);
-  }
-  40%,
-  80% {
-    transform: rotate(10deg);
-  }
+
+.darkmode--activated .pace .pace-progress {
+  background-color: #1e92fb;
 }
-@media (max-width: 500px) {
-  .github-corner:hover .octo-arm {
-    animation: none;
-  }
-  .github-corner .octo-arm {
-    animation: octocat-wave 560ms ease-in-out;
-  }
+
+.darkmode--activated .wechat-qrcode {
+  background-color: #e1e1e1 !important;
 }

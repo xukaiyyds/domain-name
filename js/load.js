@@ -19,7 +19,6 @@ function blurring() {
     clearInterval(loading);
     loaded.classList.add("display-none");
     container.classList.add("display-block");
-    container.style.cssText = "animation: smooth 1s;";
   }
 
   loaded.addEventListener("click", () => {

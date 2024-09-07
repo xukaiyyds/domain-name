@@ -1,13 +1,33 @@
+@font-face {
+  font-family: "HarmonyOS Sans SC";
+  src: url("../font/HarmonyOS_Sans_SC_Medium.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "液晶电子表";
+  src: url("../font/UnidreamLED.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "汉仪霹雳体简";
+  src: url("../font/汉仪霹雳体简.woff2") format("woff2");
+  font-display: swap;
+}
+
 html,
 body {
   height: 100%;
 }
 
+html {
+  font-size: 16px;
+}
+
 body {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  font: 16px/1.5 "HarmonyOS";
+  font: 16px/1 "HarmonyOS Sans SC";
   cursor: url("../img/cursor/normal.cur"), auto;
   user-select: none;
 }
@@ -21,17 +41,19 @@ table {
 
 th,
 td {
-  padding: 10px 20px;
-  border: 1px solid #e1e1e1;
+  border: 2px solid #eee;
 }
 
 th {
-  width: 30%;
   text-align: left;
 }
 
 a {
   text-decoration: none;
+}
+
+button {
+  outline: none;
 }
 
 a:hover,

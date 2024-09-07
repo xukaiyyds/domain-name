@@ -1,13 +1,4 @@
-.bg {
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  z-index: -1;
-  background: #000 url("../img/bg.png") center/cover no-repeat;
-}
-
+/* 加载动画 */
 .loaded {
   position: relative;
   z-index: 999;
@@ -20,18 +11,17 @@
 }
 
 .load-text {
-  font-size: 2rem;
   color: #fff;
-  /* isolation: isolate; */
+}
+
+.digit {
+  font-family: "液晶电子表";
 }
 
 .twinkle {
-  display: none;
   position: absolute;
-  bottom: 1rem;
-  font-size: 12px;
-  color: #c4c6c9;
-  animation: blink 1.5s infinite;
+  color: #a7a9ad;
+  animation: blink 1.3s infinite;
 }
 
 @keyframes blink {
@@ -40,7 +30,7 @@
   }
 
   50% {
-    opacity: 0.6;
+    opacity: 0.5;
   }
 
   100% {
@@ -48,104 +38,94 @@
   }
 }
 
-@keyframes smooth {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+/* 页面容器 */
+.bg {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  background: #000 url("../img/bg.svg") center;
 }
 
 .container {
-  display: none;
-  max-width: 900px;
-  padding: 60px;
-  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: auto;
   color: #fefefe;
   background-color: rgba(21, 21, 19, 0.6);
-  box-shadow: 0 0 10px 0 #788193;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
 
-.header {
-  text-align: center;
+/* 头部内容 */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.share-links,
+.full-screen {
+  display: inline-flex;
+  opacity: 0;
+  transition: 0.3s all;
+}
+
+.share-links .icon-share,
+.full-screen .icon-full-screen {
+  color: #f3f5f8;
+}
+
+.logo .icon-dragon,
+.title {
   color: #fff;
 }
 
-.logo {
-  line-height: 0;
-}
-
-.logo .icon-dragon {
-  font-size: 40px;
-}
-
 .title {
-  font: 32px/2 "汉仪霹雳体简", "HarmonyOS";
+  text-align: center;
 }
 
-.divider {
-  height: 2px;
-  margin: 10px 0;
-  background-color: #eaecef;
-}
-
-.describe {
-  padding: 10px 0;
-  font-size: 18px;
+/* 主体内容 */
+.main {
+  flex: 1;
 }
 
 .link {
-  color: #eee;
+  color: #f3f5f8;
 }
 
-.link:hover {
-  padding-bottom: 1px;
-  border-bottom: 1px dashed;
+#timer,
+#countdown {
+  user-select: none;
 }
 
-.info {
-  height: 317px;
-}
-
-.digit {
-  font-family: "液晶电子表", "HarmonyOS";
-  letter-spacing: 2px;
-}
-
+/* 底部内容 */
 .footer {
-  position: relative;
-  padding-top: 45px;
-  text-align: right;
-  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
   color: #718096;
 }
 
-.footer a:hover {
-  color: #30a9de;
-}
-
-.beian {
-  position: absolute;
-  bottom: 0;
+.filings-icp {
+  align-self: flex-end;
 }
 
 .filings {
-  color: #d0d0d0;
-}
-
-.cloud {
-  font-size: 14px;
   color: #1589e9;
 }
 
-.print {
-  margin-top: 6px;
+.cloud-services {
+  text-align: right;
 }
 
+.cloud {
+  color: #d0d0d0;
+}
+
+/* 用来操作DOM，不要动 */
 .display-none {
   display: none;
 }

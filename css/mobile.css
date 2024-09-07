@@ -1,75 +1,271 @@
-html {
-  font-size: 16px;
-}
-@media screen and (min-width: 375px) {
+@media (min-width: 375px) {
   html {
-    /* iPhone6的375px尺寸作为16px基准，414px正好18px大小, 600 20px */
     font-size: calc(100% + 2 * (100vw - 375px) / 39);
     font-size: calc(16px + 2 * (100vw - 375px) / 39);
   }
 }
-@media screen and (min-width: 414px) {
+
+@media (min-width: 414px) {
   html {
-    /* 414px-1000px每100像素宽字体增加1px(18px-22px) */
     font-size: calc(112.5% + 4 * (100vw - 414px) / 586);
     font-size: calc(18px + 4 * (100vw - 414px) / 586);
   }
 }
-@media screen and (min-width: 600px) {
+
+@media (min-width: 600px) {
   html {
-    /* 600px-1000px每100像素宽字体增加1px(20px-24px) */
     font-size: calc(125% + 4 * (100vw - 600px) / 400);
     font-size: calc(20px + 4 * (100vw - 600px) / 400);
   }
 }
-@media screen and (min-width: 1000px) {
+
+@media (min-width: 1000px) {
   html {
-    /* 1000px往后是每100像素0.5px增加 */
     font-size: calc(137.5% + 6 * (100vw - 1000px) / 1000);
     font-size: calc(22px + 6 * (100vw - 1000px) / 1000);
   }
 }
-@media screen and (max-width: 900px), screen and (orientation: portrait) {
+
+/* 移动端 */
+@media (max-width: 1200px) and (orientation: portrait), (any-hover: none) {
+  .load-text {
+    font-size: 2rem;
+  }
+
+  .digit {
+    letter-spacing: 0.125rem;
+  }
+
+  .twinkle {
+    bottom: 1rem;
+    font-size: 0.75rem;
+  }
+
   .bg {
-    background-size: 48.75rem;
+    background-image: none;
   }
+
   .container {
-    overflow: auto;
-    height: 100%;
-    min-width: 260px;
-    padding: 1.25rem;
-    border-radius: 0;
-    box-shadow: none;
+    align-content: flex-start;
+    /* align-content: center; */
+    min-width: 320px;
+    min-height: 100vh;
+    padding: 1rem;
   }
+
+  .header {
+    border-bottom: 0.1875rem solid #eee;
+  }
+
+  .nav {
+    justify-content: space-around;
+  }
+
   .logo .icon-dragon {
     font-size: 2rem;
   }
+
   .title {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
   }
+
+  .share-links,
+  .full-screen {
+    opacity: 1;
+  }
+
+  .share-links .icon-share,
+  .full-screen .icon-full-screen {
+    font-size: 1.25rem;
+  }
+
+  .logo .icon-dragon {
+    font-size: 2rem;
+  }
+
+  .title {
+    font: 1.5rem/2 "汉仪霹雳体简";
+  }
+
   .describe {
+    padding: 0.625rem 0;
     font-size: 1.125rem;
+    line-height: 1.4;
   }
-  body {
+
+  .info {
     font-size: 1rem;
+    line-height: 1.2;
+    letter-spacing: 0.0625rem;
   }
+
   th,
   td {
-    padding: 0.375rem;
+    padding: 0.3125rem 0.625rem;
+    border: 0.125rem solid #eee;
   }
-  th {
-    width: 50%;
-  }
+
   .footer {
-    padding-top: 10px;
+    position: relative;
+    justify-content: flex-end;
+    padding-top: 1rem;
+    font-size: 0.75rem;
   }
-  .beian {
-    top: 10px;
+
+  .filings-icp {
+    position: absolute;
+    top: 1rem;
+    left: 0;
   }
-  .pace .pace-progress {
-    height: 2px;
+
+  .cloud {
+    font-size: 0.875rem;
+  }
+
+  .cloud-services p {
+    margin-top: 0.625rem;
+  }
+}
+
+/* 桌面端 */
+@media (min-width: 320px) and (orientation: landscape) and (hover: hover) {
+  .load-text {
+    font-size: 36px;
+  }
+
+  .digit {
+    letter-spacing: 2px;
+  }
+
+  .twinkle {
+    bottom: 16px;
+    font-size: 12px;
+  }
+
+  .bg::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: url("../img/bg.png") center/contain no-repeat;
+    z-index: -1;
+    opacity: 0.5;
+    filter: blur(5px);
+  }
+
+  .container {
+    max-width: 800px;
+    padding: 60px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    box-shadow: 0 0px 10px #aaa;
+  }
+
+  .header {
+    border-bottom: 3px solid #eee;
+  }
+
+  .container:hover .share-links,
+  .container:hover .full-screen {
+    opacity: 1;
+  }
+
+  .function-button-one:hover .share-links,
+  .function-button-two:hover .full-screen {
+    transform: scale(1.2);
+  }
+
+  .share-links .icon-share,
+  .full-screen .icon-full-screen {
+    font-size: 20px;
+  }
+
+  .logo .icon-dragon {
+    font-size: 34px;
+  }
+
+  .title {
+    font: 30px/2 "汉仪霹雳体简";
+  }
+
+  .describe {
+    padding: 15px 0;
+    font-size: 18px;
+  }
+
+  .link:hover {
+    padding-bottom: 1px;
+    border-bottom: 1px dashed;
+  }
+
+  .info {
+    letter-spacing: 1px;
+  }
+
+  th,
+  td {
+    padding: 10px 20px;
+  }
+
+  th {
+    width: 30%;
+  }
+
+  td {
+    width: 70%;
+  }
+
+  .footer {
+    padding-top: 40px;
+    font-size: 12px;
+  }
+
+  .footer a:hover {
+    color: #30a9de;
+  }
+
+  .cloud {
+    font-size: 14px;
+  }
+
+  .cloud-services p {
+    margin-top: 10px;
+  }
+
+  /* GitHub Corners */
+  .github-corner:hover .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+  }
+
+  @keyframes octocat-wave {
+    0%,
+    100% {
+      transform: rotate(0);
+    }
+
+    20%,
+    60% {
+      transform: rotate(-25deg);
+    }
+
+    40%,
+    80% {
+      transform: rotate(10deg);
+    }
+  }
+
+  @media (max-width: 500px) {
+    .github-corner:hover .octo-arm {
+      animation: none;
+    }
+
+    .github-corner .octo-arm {
+      animation: octocat-wave 560ms ease-in-out;
+    }
   }
 }

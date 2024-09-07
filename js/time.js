@@ -57,9 +57,10 @@
       countdown.style.color = "#ffb000";
     }
     if (remainingTime <= 0) {
-      clearInterval(timer);
       countdown.style.color = "#e03131";
-      countdown.textContent = "域名到期了，你该续费啦！";
+      countdown.textContent = "0 天 00 小时 00 分钟 00 秒";
+      clearInterval(timer);
+      remind();
     }
   }
 
