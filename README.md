@@ -65,7 +65,7 @@ git clone git@github.com:xukaiyyds/domain-name.git
 - [iziToast](https://github.com/marcelodolza/iziToast)
 - [Share.js](https://github.com/overtrue/share.js)
 
-项目灵感来源于[腾讯云](https://cloud.tencent.com)的[中国国家顶级域名注册证书](img/certificate/xukaiyyds.cn.certificate.jpg)。
+项目灵感来源于[腾讯云](https://cloud.tencent.com)的[顶级国际域名证书](img/certificate/xukaiyyds.cn.old-certificate.jpg)。
 
 设计灵感借鉴于：<https://icp.gov.moe/?keyword=20220462>
 

@@ -17,11 +17,13 @@
     <link rel="stylesheet" href="css/mobile.css">
     <link rel="stylesheet" href="css/mend.css">
     <!-- iconfont - Project id 4426263 -->
-    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_4426263_g2bj6xuig8g.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/c/font_4426263_g2bj6xuig8g.css">
     <!-- iziToast -->
-    <link rel="stylesheet" href="https://cdn.staticfile.net/izitoast/1.4.0/css/iziToast.min.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.net/izitoast/1.4.0/css/iziToast.min.css" media="print"
+        onload="this.media='all'">
     <!-- share.js -->
-    <link rel="stylesheet" href="https://cdn.staticfile.org/social-share.js/1.0.16/css/share.min.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/social-share.js/1.0.16/css/share.min.css" media="print"
+        onload="this.media='all'">
 </head>
 
 <body>
@@ -95,50 +97,35 @@
         </footer>
     </div>
 
-    <!-- 请在下面自行修改你的域名信息 -->
     <script>
-        document.querySelector('.title').textContent = "中国国家顶级域名注册证书"; // 证书名称
         const domain = document.querySelectorAll('.domain');
         const name = document.querySelectorAll('.name');
+        const cloud = document.querySelector('.cloud');
+        const filings = document.querySelector('.filings');
+
+        /* 请在下方自行修改你的域名信息 */
+        document.querySelector('.title').textContent = "中国国家顶级域名注册证书"; // 证书名称
         for (let i = 0; i < 2; i++) {
             domain[i].textContent = "xukaiyyds.cn"; // 域名
             name[i].textContent = "徐凯"; // 域名所有者
         }
-        document.querySelectorAll('.link')[0].href = "https://" + domain[0].textContent; // 站点链接
-        document.querySelectorAll('.link')[1].href = "img/certificate/xukaiyyds.cn.old-certificate.jpg"; // 证书链接
+        document.querySelectorAll('.link')[0].href = "https://" + domain[0].textContent; // 域名链接
+        document.querySelectorAll('.link')[1].href = "img/certificate/xukaiyyds.cn.certificate.jpg"; // 域名所有者链接
         document.querySelector('.company').textContent = "广州云讯信息科技有限公司"; // 域名所属注册机构
         const startTime = new Date("2021-10-16T21:45:32"); // 域名注册时间
         const endTime = new Date("2026-10-16T21:45:32"); // 域名到期时间
+        cloud.textContent = "腾讯云"; // 域名服务商
+        cloud.href = "https://cloud.tencent.com"; // 域名服务商链接
+        document.getElementById('print').textContent = "2023 年 10 月 17 日"; // 证书打印日期
+        filings.textContent = ""; // 域名备案号（如果没有备案，可以先不填）
+        filings.href = "https://beian.miit.gov.cn"; // 域名备案号链接
+
         document.querySelector('.start').textContent = startTime.toLocaleString().replace(/\//g, '-');
         document.querySelector('.end').textContent = endTime.toLocaleString().replace(/\//g, '-');
-        // 域名服务商
-        const cloud = document.querySelector('.cloud');
-        cloud.textContent = "腾讯云";
-        cloud.href = "https://cloud.tencent.com";
-        document.getElementById('print').textContent = "2021 年 10 月 16 日"; // 证书打印日期
-        // 域名备案号
-        const filings = document.querySelector('.filings');
-        filings.textContent = ""; // 如果没有备案，可以不填
-        filings.href = "https://beian.miit.gov.cn";
         if (filings.textContent.trim() == '') {
             document.querySelector('.filings-icp').style.opacity = 0;
         }
     </script>
-
-    <!-- Pace.js -->
-    <script src="https://jsd.onmicrosoft.cn/npm/pace-js@latest/pace.min.js"></script>
-
-    <!-- Darkmode.js -->
-    <script src="https://jsd.onmicrosoft.cn/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
-
-    <!-- iziToast -->
-    <script src="https://cdn.staticfile.net/izitoast/1.4.0/js/iziToast.min.js" defer></script>
-
-    <!-- share.js -->
-    <div class="share-component share-styles display-none" data-sites="qq,qzone,wechat,weibo,douban"
-        data-wechat-qrcode-title="请打开微信扫一扫" data-wechat-qrcode-helper="分享此页面给你的朋友或朋友圈">
-    </div>
-    <script src="https://cdn.staticfile.org/social-share.js/1.0.16/js/social-share.min.js" defer></script>
 
     <!-- 开源不易，以下信息请不要修改哦 -->
     <a href="https://github.com/xukaiyyds/domain-name" class="github-corner" target="_blank"
@@ -154,9 +141,20 @@
         </svg>
     </a>
 
+    <!-- Pace.js -->
+    <script src="https://jsd.onmicrosoft.cn/npm/pace-js@latest/pace.min.js" defer></script>
+    <!-- Darkmode.js -->
+    <script src="https://jsd.onmicrosoft.cn/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js" defer></script>
+    <!-- iziToast -->
+    <script src="https://cdn.staticfile.net/izitoast/1.4.0/js/iziToast.min.js" defer></script>
+    <!-- share.js -->
+    <div class="share-component share-styles display-none" data-sites="qq,qzone,wechat,weibo,douban"
+        data-wechat-qrcode-title="微信扫码分享" data-wechat-qrcode-helper="<p>手机微信扫描二维码，点击</p><p>右上角 ··· 按钮分享到朋友圈</p>">
+    </div>
+    <script src="https://cdn.staticfile.org/social-share.js/1.0.16/js/social-share.min.js" defer></script>
     <!-- js link -->
-    <script src="js/load.js"></script>
-    <script src="js/time.js" defer></script>
+    <script src="js/load.js" async></script>
+    <script src="js/time.js" async></script>
     <script src="js/prompt.js" defer></script>
     <script src="js/script.js" defer></script>
 </body>
