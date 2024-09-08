@@ -27,13 +27,13 @@
 }
 
 /* 移动端 */
-@media (max-width: 1200px) and (orientation: portrait), (any-hover: none) {
+@media (max-width: 1024px), (orientation: portrait), (any-hover: none) {
   .load-text {
     font-size: 2rem;
   }
 
   .digit {
-    letter-spacing: 0.125rem;
+    letter-spacing: 0.1rem;
   }
 
   .twinkle {
@@ -41,19 +41,15 @@
     font-size: 0.75rem;
   }
 
-  .bg {
-    background-image: none;
-  }
-
   .container {
     align-content: flex-start;
-    /* align-content: center; */
     min-width: 320px;
     min-height: 100vh;
     padding: 1rem;
   }
 
   .header {
+    margin-top: 2rem;
     border-bottom: 0.1875rem solid #eee;
   }
 
@@ -112,6 +108,7 @@
     position: relative;
     justify-content: flex-end;
     padding-top: 1rem;
+    margin-bottom: 4rem;
     font-size: 0.75rem;
   }
 
@@ -131,7 +128,7 @@
 }
 
 /* 桌面端 */
-@media (min-width: 320px) and (orientation: landscape) and (hover: hover) {
+@media (min-width: 1024px) and (orientation: landscape) and (hover: hover) {
   .load-text {
     font-size: 36px;
   }
@@ -191,6 +188,7 @@
 
   .title {
     font: 30px/2 "汉仪霹雳体简";
+    letter-spacing: 3px;
   }
 
   .describe {
