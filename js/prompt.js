@@ -1,16 +1,24 @@
+/* 弹窗默认设置 */
+iziToast.settings({
+  timeout: 2000,
+  closeOnEscape: true,
+  displayMode: "replace",
+  layout: 2,
+  position: "topLeft",
+  transitionIn: "bounceInRight",
+  transitionOut: "fadeOutLeft",
+});
+
 /* 到期提醒 */
 function remind() {
   setTimeout(function () {
-    iziToast.error({
+    iziToast.show({
       timeout: 5000,
       title: "温馨提醒",
       titleLineHeight: 20,
       message: "域名到期了，你该续费啦！",
       icon: "iconfont icon-remind",
-      position: "topLeft",
-      transitionIn: "bounceInRight",
-      transitionOut: "fadeOutLeft",
-      layout: 2,
+      color: "red",
     });
   }, 3000);
 }
@@ -23,17 +31,12 @@ document.addEventListener("copy", function (e) {
   if (text) {
     e.preventDefault();
     clipboardData.setData("text/plain", text);
-    iziToast.success({
-      timeout: 2000,
+    iziToast.show({
       title: "复制成功",
       titleLineHeight: 20,
       message: `请尊重域名所有者${name[0].textContent}的版权信息`,
       icon: "iconfont icon-copy-success",
-      position: "topLeft",
-      transitionIn: "bounceInRight",
-      transitionOut: "fadeOutLeft",
-      layout: 2,
-      displayMode: 0,
+      color: "green",
     });
   }
 });
@@ -43,51 +46,38 @@ let shareLinks = document.querySelector(".share-links");
 shareLinks.onclick = function () {
   let shareComponent = document.querySelector(".share-component");
 
-  if (shareComponent.classList.contains("display-block")) {
+  if (shareComponent.classList.contains("display-none")) {
     iziToast.show({
-      timeout: 1500,
-      icon: "iconfont icon-share-prompt",
-      message: "请在页面左下角进行分享",
-      position: "topLeft",
-      transitionIn: "bounceInDown",
-      transitionOut: "fadeOutLeft",
-      displayMode: 2,
-    });
-  } else {
-    iziToast.show({
-      icon: "iconfont icon-wenhao",
-      title: "确认要开启分享功能吗",
-      position: "center",
       timeout: false,
+      title: "是否开启分享功能？",
+      icon: "iconfont icon-wenhao",
+      displayMode: "once",
+      layout: 1,
       close: false,
-      closeOnEscape: true,
       drag: false,
+      position: "center",
+      transitionIn: "bounceInDown",
+      transitionOut: "fadeOutDown",
       overlay: true,
       overlayColor: "rgba(0, 0, 0, 0.8)",
-      displayMode: 1,
       theme: "dark",
       buttons: [
         [
-          "<button>确认</button>",
+          "<button>开启</button>",
           function (instance, toast) {
-            iziToast.success({
-              timeout: 2000,
+            shareComponent.classList.remove("display-none");
+            iziToast.show({
               title: "开启成功",
               titleLineHeight: 20,
               message: "请在页面左下角进行分享",
               icon: "iconfont icon-success",
-              position: "topLeft",
-              transitionIn: "bounceInRight",
-              transitionOut: "fadeOutLeft",
-              layout: 2,
+              color: "green",
             });
-            shareComponent.classList.add("display-block");
             instance.hide(
               {
                 transitionOut: "flipOutX",
               },
-              toast,
-              "buttonName"
+              toast
             );
           },
           true,
@@ -99,12 +89,24 @@ shareLinks.onclick = function () {
               {
                 transitionOut: "fadeOutDown",
               },
-              toast,
-              "buttonName"
+              toast
             );
           },
         ],
       ],
+    });
+  } else {
+    iziToast.show({
+      timeout: 1500,
+      message: "请在页面左下角进行分享",
+      icon: "iconfont icon-share-prompt",
+      displayMode: "once",
+      layout: 1,
+      close: false,
+      progressBar: false,
+      position: "topCenter",
+      transitionIn: "bounceInDown",
+      transitionOut: "fadeOutUp",
     });
   }
 };

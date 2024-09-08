@@ -2,8 +2,8 @@
 function addDarkmodeWidget() {
   // 配置项：
   const options = {
-    bottom: "16px", // 定位底部距离 default: '32px'
-    right: "8px", // 定位右边距离 default: '32px'
+    bottom: "1rem", // 定位底部距离 default: '32px'
+    right: "1rem", // 定位右边距离 default: '32px'
     left: "unset", // 定位左边距离 default: 'unset'
     time: "0s", // 默认动画时间 default: '0.3s'
     mixColor: "#fff", // 需要改变的颜色 default: '#fff'
@@ -16,8 +16,7 @@ function addDarkmodeWidget() {
   };
 
   const darkmode = new Darkmode(options);
-  darkmode.showWidget(); // 启用暗模式
-  // darkmode.toggle(); // 禁用暗模式
+  darkmode.showWidget();
 
   const darkmodeToggle = document.querySelector(".darkmode-toggle");
 

@@ -9,22 +9,26 @@ let loading = setInterval(blurring, 30);
 
 function blurring() {
   load++;
+
   loadText.innerText = `${load}%`;
   loadText.style.opacity = scale(load, 0, 100, 1, 0);
 
-  if (load > 9) {
-    twinkle.classList.add("display-block");
-  }
-  if (load > 99) {
-    clearInterval(loading);
-    loaded.classList.add("display-none");
-    container.classList.add("display-block");
+  if (load > 20) {
+    twinkle.classList.remove("display-none");
+    loaded.addEventListener("click", () => {
+      loadComplete();
+    });
   }
 
-  loaded.addEventListener("click", () => {
-    twinkle.classList.add("display-none");
-    load = 90;
-  });
+  if (load > 99) {
+    loadComplete();
+  }
+}
+
+function loadComplete() {
+  clearInterval(loading);
+  loaded.classList.add("display-none");
+  container.classList.remove("display-none");
 }
 
 // https://stackoverflow.com/questions/10756313/javascript-jquery-map-a-range-of-numbers-to-another-range-of-numbers
