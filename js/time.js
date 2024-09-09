@@ -22,17 +22,15 @@
     }
   }
 
-  updateTimer();
   setInterval(updateTimer, 1000);
 
   /* 域名剩余时长 */
   function updateCountdown() {
-    let current = new Date();
-    let currentTime = current.getTime();
-    let targetTime = endTime.getTime();
-    let remainingTime = targetTime - currentTime;
-
-    let days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+    const current = new Date();
+    const currentTime = current.getTime();
+    const targetTime = endTime.getTime();
+    const remainingTime = targetTime - currentTime;
+    const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
     let hours = Math.floor(
       (remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
     );
@@ -47,8 +45,7 @@
     if (String(seconds).length === 1) {
       seconds = "0" + seconds;
     }
-
-    let countdown = document.getElementById("countdown");
+    const countdown = document.getElementById("countdown");
     countdown.innerHTML = `${days} 天 ${hours} 小时 ${minutes} 分钟 ${seconds} 秒`;
     if (days < 30) {
       countdown.style.color = "#4772fa";
@@ -60,9 +57,18 @@
       countdown.style.color = "#e03131";
       countdown.textContent = "0 天 00 小时 00 分钟 00 秒";
       clearInterval(timer);
-      remind();
+      setTimeout(function () {
+        iziToast.show({
+          timeout: 5000,
+          title: "温馨提醒",
+          titleLineHeight: 20,
+          message: "域名到期了，你该续费啦！",
+          icon: "iconfont icon-remind",
+          color: "red",
+        });
+      }, 3000);
     }
   }
 
-  let timer = setInterval(updateCountdown, 1000);
+  const timer = setInterval(updateCountdown, 1000);
 })();
