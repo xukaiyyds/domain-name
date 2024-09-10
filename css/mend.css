@@ -24,7 +24,6 @@
   right: 0;
   width: 3rem;
   height: 3rem;
-  border: 0;
   color: #f3f5f8;
   fill: #151513;
 }
@@ -47,7 +46,6 @@
 /* 明暗切换按钮 */
 .darkmode-toggle {
   z-index: 1;
-  padding: 0;
   font-size: 1.5rem;
   box-shadow: 1px 1px 10px 0 rgba(55, 99, 170, 0.6);
 }
@@ -67,13 +65,13 @@
 }
 
 .darkmode--activated .load-text,
-.darkmode--activated .icon-dragon,
+.darkmode--activated .logo i,
 .darkmode--activated .title {
   color: #000;
 }
 
-.darkmode--activated .icon-share,
-.darkmode--activated .icon-full-screen,
+.darkmode--activated .share-links i,
+.darkmode--activated .full-screen i,
 .darkmode--activated .link {
   color: #151513;
 }
