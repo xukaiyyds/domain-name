@@ -6,47 +6,37 @@
     const differenceInDays = differenceInTime / (1000 * 3600 * 24);
     const differenceInMonths = differenceInDays / 30;
     const differenceInYears = differenceInMonths / 12;
-    const timer = document.getElementById("timer");
+
     if (differenceInYears >= 1) {
-      return (timer.innerHTML = `${Math.floor(
-        differenceInYears
-      )} 年 ${Math.floor(differenceInMonths % 12)} 月 ${Math.round(
-        differenceInDays % 30
-      )} 天`);
+      return `${Math.floor(differenceInYears)} 年 ${Math.floor(
+        differenceInMonths % 12
+      )} 月 ${Math.round(differenceInDays % 30)} 天`;
     } else if (differenceInMonths >= 1) {
-      return (timer.innerHTML = `${Math.floor(
-        differenceInMonths
-      )} 月 ${Math.round(differenceInDays % 30)} 天`);
+      return `${Math.floor(differenceInMonths)} 月 ${Math.round(
+        differenceInDays % 30
+      )} 天`;
     } else {
-      return (timer.innerHTML = `${Math.round(differenceInDays)} 天`);
+      return `${Math.round(differenceInDays)} 天`;
     }
   }
 
   setInterval(updateTimer, 1000);
+  document.getElementById("timer").innerHTML = updateTimer();
 
   /* 域名剩余时长 */
   function updateCountdown() {
+    const countdown = document.getElementById("countdown");
     const current = new Date();
     const currentTime = current.getTime();
     const targetTime = endTime.getTime();
     const remainingTime = targetTime - currentTime;
-    const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+    let days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
     let hours = Math.floor(
       (remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
     );
-    if (String(hours).length === 1) {
-      hours = "0" + hours;
-    }
     let minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
-    if (String(minutes).length === 1) {
-      minutes = "0" + minutes;
-    }
     let seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
-    if (String(seconds).length === 1) {
-      seconds = "0" + seconds;
-    }
-    const countdown = document.getElementById("countdown");
-    countdown.innerHTML = `${days} 天 ${hours} 小时 ${minutes} 分钟 ${seconds} 秒`;
+
     if (days < 30) {
       countdown.style.color = "#4772fa";
     }
@@ -68,7 +58,19 @@
         });
       }, 3000);
     }
+    if (hours < 10) {
+      hours = "0" + hours;
+    }
+    if (minutes < 10) {
+      minutes = "0" + minutes;
+    }
+    if (seconds < 10) {
+      seconds = "0" + seconds;
+    }
+
+    return (countdown.innerHTML = `${days} 天 ${hours} 小时 ${minutes} 分钟 ${seconds} 秒`);
   }
 
   const timer = setInterval(updateCountdown, 1000);
+  countdown.innerHTML = updateCountdown();
 })();
