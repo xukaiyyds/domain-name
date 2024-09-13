@@ -28,14 +28,12 @@ html {
 body {
   display: flex;
   font: 16px/1 "HarmonyOS Sans SC";
-  cursor: url("../img/cursor/normal.cur"), auto;
   user-select: none;
 }
 
 table {
   width: 100%;
   table-layout: fixed;
-  cursor: url("../img/cursor/text.cur"), text;
   user-select: text;
 }
 
@@ -54,10 +52,4 @@ a {
 
 button {
   outline: none;
-}
-
-a:hover,
-button:hover,
-.loaded:hover {
-  cursor: url("../img/cursor/link.cur"), pointer;
 }

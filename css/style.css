@@ -49,6 +49,19 @@
   background: #000 url("../img/bg.svg") center;
 }
 
+.bg::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: url("../img/bg.png") center no-repeat;
+  z-index: -1;
+  opacity: 0.5;
+  filter: blur(5px);
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -61,40 +74,40 @@
 }
 
 /* 头部内容 */
+.header {
+  position: relative;
+}
+
 .nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  position: absolute;
 }
 
-.share-links,
-.full-screen {
-  display: inline-flex;
-  opacity: 0;
-  transition: 0.3s all;
-}
-
-.share-links .icon-share,
-.full-screen .icon-full-screen {
+.nav i,
+.link {
   color: #f3f5f8;
 }
 
-.logo .icon-dragon,
+.logo,
+.title {
+  text-align: center;
+}
+
+.logo i,
 .title {
   color: #fff;
 }
 
 .title {
-  text-align: center;
+  font-family: "汉仪霹雳体简";
+}
+
+.divider {
+  background-color: #eee;
 }
 
 /* 主体内容 */
 .main {
   flex: 1;
-}
-
-.link {
-  color: #f3f5f8;
 }
 
 #timer,
@@ -105,12 +118,7 @@
 /* 底部内容 */
 .footer {
   display: flex;
-  justify-content: space-between;
   color: #718096;
-}
-
-.filings-icp {
-  align-self: flex-end;
 }
 
 .filings {

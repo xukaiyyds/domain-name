@@ -28,12 +28,19 @@
 
 /* 移动端 */
 @media (max-width: 1024px), (orientation: portrait), (any-hover: none) {
+  /* GitHub Corners */
+  .github-corner svg {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  /* 加载动画 */
   .load-text {
     font-size: 2rem;
   }
 
   .digit {
-    letter-spacing: 0.1rem;
+    letter-spacing: 0.125rem;
   }
 
   .twinkle {
@@ -41,60 +48,65 @@
     font-size: 0.75rem;
   }
 
+  /* 页面容器 */
+  .bg::before {
+    background-size: cover;
+  }
+
   .container {
-    align-content: flex-start;
     min-width: 320px;
     min-height: 100vh;
     padding: 1rem;
   }
 
+  /* 头部内容 */
   .header {
     margin-top: 2rem;
-    border-bottom: 0.1875rem solid #eee;
   }
 
   .nav {
-    justify-content: space-around;
+    top: -0.25rem;
+    right: -0.25rem;
   }
 
-  .logo .icon-dragon {
-    font-size: 2rem;
+  .nav i {
+    display: inline-flex;
+    padding: 0.25rem;
+    font-size: 1.25rem;
+    opacity: 1;
+  }
+
+  .logo i {
+    font-size: 1.875rem;
   }
 
   .title {
-    font-size: 1.6rem;
+    margin-top: 0.625rem;
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
   }
 
-  .share-links,
-  .full-screen {
-    opacity: 1;
+  .divider {
+    margin: 1rem 0;
+    height: 0.1875rem;
   }
 
-  .share-links .icon-share,
-  .full-screen .icon-full-screen {
-    font-size: 1.25rem;
-  }
-
-  .logo .icon-dragon {
-    font-size: 2rem;
-  }
-
-  .title {
-    font: 1.5rem/2 "汉仪霹雳体简";
-  }
-
-  .describe {
-    padding: 0.625rem 0;
-    font-size: 1.125rem;
+  /* 主体内容 */
+  .describe,
+  .info {
     line-height: 1.4;
   }
 
+  .describe {
+    font-size: 1.125rem;
+  }
+
   .info {
+    margin-top: 0.875rem;
     font-size: 1rem;
-    line-height: 1.2;
     letter-spacing: 0.0625rem;
   }
 
@@ -104,6 +116,7 @@
     border: 0.125rem solid #eee;
   }
 
+  /* 底部内容 */
   .footer {
     position: relative;
     justify-content: flex-end;
@@ -127,8 +140,39 @@
   }
 }
 
+/* 平板或较大的手机 */
+@media (min-width: 600px) and (max-width: 1024px), (hover: none) {
+  .title {
+    letter-spacing: 0.1875rem;
+  }
+  .footer {
+    padding-top: 2rem;
+  }
+  .filings-icp {
+    top: 2rem;
+  }
+}
+
 /* 桌面端 */
 @media (min-width: 1024px) and (orientation: landscape) and (hover: hover) {
+  /* 鼠标指针 */
+  body,
+  .iziToast {
+    cursor: url("../img/cursor/normal.cur"), auto !important;
+  }
+
+  .loaded,
+  .nav i,
+  a,
+  button {
+    cursor: url("../img/cursor/link.cur"), pointer !important;
+  }
+
+  table {
+    cursor: url("../img/cursor/text.cur"), text;
+  }
+
+  /* 加载动画 */
   .load-text {
     font-size: 36px;
   }
@@ -142,17 +186,9 @@
     font-size: 12px;
   }
 
+  /* 页面容器 */
   .bg::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    background: url("../img/bg.png") center/contain no-repeat;
-    z-index: -1;
-    opacity: 0.5;
-    filter: blur(5px);
+    background-size: contain;
   }
 
   .container {
@@ -160,39 +196,46 @@
     padding: 60px;
     border: 1px solid #eee;
     border-radius: 10px;
-    box-shadow: 0 0px 10px #aaa;
+    box-shadow: 0 0 10px #aaa;
   }
 
-  .header {
-    border-bottom: 3px solid #eee;
+  /* 头部内容 */
+  .nav {
+    top: 0;
+    right: 0;
+    opacity: 0;
+    transition: 0.3s all;
   }
 
-  .container:hover .share-links,
-  .container:hover .full-screen {
-    opacity: 1;
-  }
-
-  .function-button-one:hover .share-links,
-  .function-button-two:hover .full-screen {
-    transform: scale(1.2);
-  }
-
-  .share-links .icon-share,
-  .full-screen .icon-full-screen {
+  .nav i {
     font-size: 20px;
   }
 
-  .logo .icon-dragon {
-    font-size: 34px;
+  .container:hover .nav {
+    opacity: 1;
+  }
+
+  .header:hover .nav {
+    transform: scale(1.2);
+  }
+
+  .logo i {
+    font-size: 36px;
   }
 
   .title {
-    font: 30px/2 "汉仪霹雳体简";
+    margin-top: 12px;
+    font-size: 32px;
     letter-spacing: 3px;
   }
 
+  .divider {
+    margin: 19.3px 0;
+    height: 3px;
+  }
+
+  /* 主体内容 */
   .describe {
-    padding: 15px 0;
     font-size: 18px;
   }
 
@@ -202,6 +245,7 @@
   }
 
   .info {
+    margin-top: 14px;
     letter-spacing: 1px;
   }
 
@@ -218,13 +262,19 @@
     width: 70%;
   }
 
+  /* 底部内容 */
   .footer {
-    padding-top: 40px;
+    justify-content: space-between;
+    padding-top: 24px;
     font-size: 12px;
   }
 
   .footer a:hover {
     color: #30a9de;
+  }
+
+  .filings-icp {
+    align-self: flex-end;
   }
 
   .cloud {
@@ -236,6 +286,11 @@
   }
 
   /* GitHub Corners */
+  .github-corner svg {
+    width: 80px;
+    height: 80px;
+  }
+
   .github-corner:hover .octo-arm {
     animation: octocat-wave 560ms ease-in-out;
   }
