@@ -17,8 +17,8 @@
     <link rel="stylesheet" href="css/mobile.css">
     <link rel="stylesheet" href="css/mend.css">
     <!-- iconfont - Project id 4426263 -->
-    <link rel="stylesheet" href="https://at.alicdn.com/t/c/font_4426263_xfn9j3xclq.css">
-    <!-- iziToast -->
+    <link rel="stylesheet" href="https://at.alicdn.com/t/c/font_4426263_5e4qknafe3c.css">
+    <!-- iziToast.js -->
     <link rel="stylesheet" href="https://cdn.staticfile.net/izitoast/1.4.0/css/iziToast.min.css" media="print"
         onload="this.media='all'">
     <!-- share.js -->
@@ -26,25 +26,17 @@
 </head>
 
 <body>
-    <div class="loaded">
-        <div class="load-text digit">0%</div>
+    <div class="loaded display-none">
+        <div class="load-text digit"></div>
         <div class="twinkle display-none">点击任意处关闭</div>
     </div>
     <div class="bg"></div>
     <div class="container display-none">
         <header class="header">
-            <nav class="nav">
-                <div class="function-button-one">
-                    <a class="share-links" title="开启分享"><i class="iconfont icon-share"></i></a>
-                </div>
-                <div class="logo">
-                    <i class="iconfont icon-dragon"></i>
-                </div>
-                <div class="function-button-two">
-                    <a class="full-screen" title="进入全屏"><i class="iconfont icon-full-screen"></i></a>
-                </div>
-            </nav>
+            <nav class="nav"><i class="iconfont icon-menu"></i></nav>
+            <div class="logo"><i class="iconfont icon-dragon"></i></div>
             <h1 class="title"></h1>
+            <div class="divider"></div>
         </header>
         <main class="main">
             <p class="describe">
@@ -116,8 +108,8 @@
         cloud.textContent = "腾讯云"; // 域名服务商
         cloud.href = "https://cloud.tencent.com"; // 域名服务商链接
         document.getElementById('print').textContent = "2023 年 10 月 17 日"; // 证书打印日期
-        filings.textContent = ""; // 域名备案号（如果没有备案，可以先不填）
-        filings.href = "https://beian.miit.gov.cn"; // 域名备案号链接
+        filings.textContent = "萌ICP备20246633号"; // 域名备案号（如果没有备案，可以先不填，或者选择萌备）
+        filings.href = "https://icp.gov.moe/?keyword=20246633"; // 域名备案号链接
 
         document.querySelector('.start').textContent = startTime.toLocaleString().replace(/\//g, '-');
         document.querySelector('.end').textContent = endTime.toLocaleString().replace(/\//g, '-');
@@ -125,6 +117,10 @@
             document.querySelector('.filings-icp').style.opacity = 0;
         }
     </script>
+
+    <div class="share-component share-styles display-none" data-sites="qq,qzone,wechat,weibo,douban"
+        data-wechat-qrcode-title="微信扫码分享" data-wechat-qrcode-helper="<p>手机微信扫描二维码，点击</p><p>右上角 ··· 按钮分享到朋友圈</p>">
+    </div>
 
     <!-- 开源不易，以下信息请不要修改哦 -->
     <a href="https://github.com/xukaiyyds/domain-name" class="github-corner" target="_blank"
@@ -140,22 +136,20 @@
         </svg>
     </a>
 
+    <!-- js async link -->
+    <script async src="js/load.js"></script>
+    <script async src="js/time.js"></script>
     <!-- Pace.js -->
-    <script src="https://jsd.onmicrosoft.cn/npm/pace-js@latest/pace.min.js" defer></script>
+    <script defer src="https://jsd.onmicrosoft.cn/npm/pace-js@latest/pace.min.js"></script>
     <!-- Darkmode.js -->
-    <script src="https://jsd.onmicrosoft.cn/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js" defer></script>
-    <!-- iziToast -->
-    <script src="https://cdn.staticfile.net/izitoast/1.4.0/js/iziToast.min.js" defer></script>
+    <script defer src="https://jsd.onmicrosoft.cn/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <!-- iziToast.js -->
+    <script defer src="https://cdn.staticfile.net/izitoast/1.4.0/js/iziToast.min.js"></script>
     <!-- share.js -->
-    <div class="share-component share-styles display-none" data-sites="qq,qzone,wechat,weibo,douban"
-        data-wechat-qrcode-title="微信扫码分享" data-wechat-qrcode-helper="<p>手机微信扫描二维码，点击</p><p>右上角 ··· 按钮分享到朋友圈</p>">
-    </div>
-    <script src="https://cdn.staticfile.org/social-share.js/1.0.16/js/social-share.min.js" defer></script>
-    <!-- js link -->
-    <script src="js/load.js" async></script>
-    <script src="js/time.js" async></script>
-    <script src="js/prompt.js" defer></script>
-    <script src="js/script.js" defer></script>
+    <script defer src="https://cdn.staticfile.org/social-share.js/1.0.16/js/social-share.min.js"></script>
+    <!-- js defer link -->
+    <script defer src="js/prompt.js"></script>
+    <script defer src="js/script.js"></script>
 </body>
 
 </html>
