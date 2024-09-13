@@ -57,6 +57,7 @@
           color: "red",
         });
       }, 3000);
+      return countdown.textContent;
     }
     if (hours < 10) {
       hours = "0" + hours;
