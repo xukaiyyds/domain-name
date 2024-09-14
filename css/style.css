@@ -1,6 +1,6 @@
 /* 加载动画 */
 .loaded {
-  position: relative;
+  position: fixed;
   z-index: 999;
   display: flex;
   justify-content: center;

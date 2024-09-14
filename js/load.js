@@ -2,7 +2,6 @@
   const loaded = document.querySelector(".loaded");
   const loadText = document.querySelector(".load-text");
   const twinkle = document.querySelector(".twinkle");
-  const container = document.querySelector(".container");
   const loading = setInterval(blurring, 30);
   const loadStart = sessionStorage.getItem("load");
   const scale = (num, in_min, in_max, out_min, out_max) => {
@@ -41,6 +40,5 @@
     clearInterval(loading);
     sessionStorage.setItem("load", "true");
     loaded.classList.add("display-none");
-    container.classList.remove("display-none");
   }
 })();
