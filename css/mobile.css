@@ -30,8 +30,10 @@
 @media (max-width: 1024px), (orientation: portrait), (any-hover: none) {
   /* GitHub Corners */
   .github-corner svg {
+    left: 0;
     width: 3rem;
     height: 3rem;
+    transform: scale(-1, 1);
   }
 
   /* 加载动画 */
@@ -65,7 +67,7 @@
   }
 
   .nav {
-    top: -0.25rem;
+    top: -1.75rem;
     right: -0.25rem;
   }
 
@@ -287,6 +289,7 @@
 
   /* GitHub Corners */
   .github-corner svg {
+    right: 0;
     width: 80px;
     height: 80px;
   }
