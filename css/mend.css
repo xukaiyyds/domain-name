@@ -9,7 +9,7 @@
 
 .pace .pace-progress {
   position: fixed;
-  bottom: 0;
+  top: 0;
   right: 100%;
   z-index: 99;
   width: 100%;
@@ -91,6 +91,11 @@
 
 .darkmode--activated .pace .pace-progress {
   background-color: #1e92fb;
+}
+
+.darkmode--activated .github-corner svg {
+  color: #151513;
+  fill: #f3f5f8;
 }
 
 .darkmode--activated .wechat-qrcode {
