@@ -39,25 +39,24 @@
 }
 
 /* 页面容器 */
+.bg,
+.bg::before {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
 .bg {
   position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  z-index: -1;
   background: #000 url("../img/bg.svg") center;
 }
 
 .bg::before {
   content: "";
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
   background: url("../img/bg.png") center no-repeat;
-  z-index: -1;
   opacity: 0.5;
   filter: blur(5px);
 }
@@ -65,7 +64,6 @@
 .container {
   display: flex;
   flex-direction: column;
-  width: 100%;
   margin: auto;
   color: #fefefe;
   background-color: rgba(21, 21, 19, 0.6);
@@ -121,16 +119,12 @@
   color: #718096;
 }
 
-.filings {
-  color: #1589e9;
+.footer a {
+  color: #d0d0d0;
 }
 
 .cloud-services {
   text-align: right;
-}
-
-.cloud {
-  color: #d0d0d0;
 }
 
 /* 用来操作DOM，不要动 */

@@ -43,7 +43,7 @@
 /* 明暗切换按钮 */
 .darkmode-toggle {
   font-size: 1.5rem;
-  box-shadow: 1px 1px 10px 0 #3763aa;
+  box-shadow: 2px 2px 10px 0 #3763aa;
 }
 
 /* 浅色模式适配 */
@@ -80,11 +80,7 @@
   border-color: #16181a;
 }
 
-.darkmode--activated .filings {
-  color: #0366d6;
-}
-
-.darkmode--activated .cloud {
+.darkmode--activated .footer a {
   color: #2c3e50;
 }
 

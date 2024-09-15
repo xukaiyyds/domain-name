@@ -27,6 +27,16 @@
 }
 
 /* 移动端 */
+@media (max-width: 600px) {
+  .footer {
+    padding-top: 1rem;
+  }
+
+  .filings-icp {
+    top: 2rem;
+  }
+}
+
 @media (max-width: 1024px), (orientation: portrait), (any-hover: none) {
   /* GitHub Corners */
   .github-corner svg {
@@ -42,7 +52,7 @@
   }
 
   .digit {
-    letter-spacing: 0.125rem;
+    letter-spacing: 0.1rem;
   }
 
   .twinkle {
@@ -85,7 +95,10 @@
   .title {
     margin-top: 0.625rem;
     font-size: 1.5rem;
-    letter-spacing: 0.1rem;
+    letter-spacing: 0.15rem;
+  }
+
+  .omit-text {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -122,36 +135,19 @@
   .footer {
     position: relative;
     justify-content: flex-end;
-    padding-top: 1rem;
+    padding-top: 2rem;
     margin-bottom: 4rem;
     font-size: 0.75rem;
   }
 
   .filings-icp {
     position: absolute;
-    top: 1rem;
     left: 0;
-  }
-
-  .cloud {
-    font-size: 0.875rem;
+    bottom: 0;
   }
 
   .cloud-services p {
     margin-top: 0.625rem;
-  }
-}
-
-/* 平板或较大的手机 */
-@media (min-width: 600px) and (max-width: 1024px), (hover: none) {
-  .title {
-    letter-spacing: 0.1875rem;
-  }
-  .footer {
-    padding-top: 2rem;
-  }
-  .filings-icp {
-    top: 2rem;
   }
 }
 
@@ -241,9 +237,9 @@
     font-size: 18px;
   }
 
-  .link:hover {
-    padding-bottom: 1px;
-    border-bottom: 1px dashed;
+  .link:hover,
+  .darkmode--activated .link:hover {
+    color: #1589e9;
   }
 
   .info {
@@ -254,6 +250,7 @@
   th,
   td {
     padding: 10px 20px;
+    border: 2px solid #eee;
   }
 
   th {
@@ -271,7 +268,8 @@
     font-size: 12px;
   }
 
-  .footer a:hover {
+  .footer a:hover,
+  .darkmode--activated .footer a:hover {
     color: #30a9de;
   }
 

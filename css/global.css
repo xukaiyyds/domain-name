@@ -37,11 +37,6 @@ table {
   user-select: text;
 }
 
-th,
-td {
-  border: 2px solid #eee;
-}
-
 th {
   text-align: left;
 }
