@@ -46,7 +46,7 @@
   box-shadow: 1px 1px 10px 0 #3763aa;
 }
 
-/* 个性化配置菜单 */
+/* 导航菜单按钮 */
 .iziToast.iziToast-theme-dark .iziToast-buttons > button {
   display: inline-flex !important;
   gap: 2px;
