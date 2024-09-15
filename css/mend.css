@@ -43,7 +43,13 @@
 /* 明暗切换按钮 */
 .darkmode-toggle {
   font-size: 1.5rem;
-  box-shadow: 2px 2px 10px 0 #3763aa;
+  box-shadow: 1px 1px 10px 0 #3763aa;
+}
+
+/* 个性化配置菜单 */
+.iziToast.iziToast-theme-dark .iziToast-buttons > button {
+  display: inline-flex !important;
+  gap: 2px;
 }
 
 /* 浅色模式适配 */
