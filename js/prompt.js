@@ -1,5 +1,5 @@
 (function () {
-  /* 默认设置 */
+  /* 弹窗默认设置 */
   iziToast.settings({
     timeout: 2000,
     closeOnEscape: true,
@@ -10,6 +10,47 @@
     transitionOut: "fadeOutLeft",
     theme: "light",
   });
+
+  /* 域名到期预警 */
+  Boolean(sessionStorage.getItem("expiration_warning"))
+    ? ""
+    : window.addEventListener("load", domainExpirationWarning);
+
+  function domainExpirationWarning() {
+    sessionStorage.setItem("expiration_warning", "true");
+    setTimeout(function () {
+      if (countdown.classList.contains("countdown-blue")) {
+        iziToast.show({
+          timeout: 5000,
+          title: "温馨提醒",
+          titleLineHeight: 20,
+          message: "域名剩余时长已不足 30 天",
+          icon: "iconfont icon-remind",
+          color: "blue",
+        });
+      }
+      if (countdown.classList.contains("countdown-yellow")) {
+        iziToast.show({
+          timeout: 5000,
+          title: "温馨提醒",
+          titleLineHeight: 20,
+          message: "域名剩余时长已不足 7 天，请及时续费",
+          icon: "iconfont icon-remind",
+          color: "yellow",
+        });
+      }
+      if (countdown.classList.contains("countdown-red")) {
+        iziToast.show({
+          timeout: 5000,
+          title: "温馨提醒",
+          titleLineHeight: 20,
+          message: `域名已到期，请前往${cloud.textContent}进行续费`,
+          icon: "iconfont icon-remind",
+          color: "red",
+        });
+      }
+    }, 3000);
+  }
 
   /* 复制提醒 */
   document.addEventListener("copy", function (e) {

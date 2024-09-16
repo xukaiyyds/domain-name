@@ -17,6 +17,25 @@
   background-color: #29d;
 }
 
+/* 域名到期预警 */
+.countdown-blue {
+  color: #4772fa;
+}
+
+.countdown-yellow {
+  color: #ffb000;
+}
+
+.countdown-red {
+  color: #e03131;
+}
+
+/* 导航菜单按钮 */
+.iziToast.iziToast-theme-dark .iziToast-buttons > button {
+  display: inline-flex !important;
+  gap: 2px;
+}
+
 /* GitHub Corners */
 .github-corner svg {
   position: fixed;
@@ -44,12 +63,6 @@
 .darkmode-toggle {
   font-size: 1.5rem;
   box-shadow: 1px 1px 10px 0 #3763aa;
-}
-
-/* 导航菜单按钮 */
-.iziToast.iziToast-theme-dark .iziToast-buttons > button {
-  display: inline-flex !important;
-  gap: 2px;
 }
 
 /* 浅色模式适配 */

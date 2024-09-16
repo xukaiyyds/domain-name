@@ -1,5 +1,8 @@
 (function () {
   /* 域名使用时长 */
+  setInterval(updateTimer, 1000);
+  document.getElementById("timer").innerHTML = updateTimer();
+
   function updateTimer() {
     const currentDate = new Date();
     const differenceInTime = currentDate.getTime() - startTime.getTime();
@@ -20,14 +23,14 @@
     }
   }
 
-  setInterval(updateTimer, 1000);
-  document.getElementById("timer").innerHTML = updateTimer();
-
   /* 域名剩余时长 */
+  const countdown = document.getElementById("countdown");
+  const timer = setInterval(updateCountdown, 1000);
+  updateCountdown();
+
   function updateCountdown() {
-    const countdown = document.getElementById("countdown");
-    const current = new Date();
-    const currentTime = current.getTime();
+    const currentDate = new Date();
+    const currentTime = currentDate.getTime();
     const targetTime = endTime.getTime();
     const remainingTime = targetTime - currentTime;
     let days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
@@ -38,26 +41,17 @@
     let seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
 
     if (days < 30) {
-      countdown.style.color = "#4772fa";
+      countdown.classList.add("countdown-blue");
     }
     if (days < 7) {
-      countdown.style.color = "#ffb000";
+      countdown.classList.remove("countdown-blue");
+      countdown.classList.add("countdown-yellow");
     }
     if (remainingTime <= 0) {
-      countdown.style.color = "#e03131";
-      countdown.textContent = "0 天 00 小时 00 分钟 00 秒";
+      countdown.classList.remove("countdown-yellow");
+      countdown.classList.add("countdown-red");
       clearInterval(timer);
-      setTimeout(function () {
-        iziToast.show({
-          timeout: 5000,
-          title: "温馨提醒",
-          titleLineHeight: 20,
-          message: "域名到期了，你该续费啦！",
-          icon: "iconfont icon-remind",
-          color: "red",
-        });
-      }, 3000);
-      return countdown.textContent;
+      return (countdown.textContent = "0 天 00 小时 00 分钟 00 秒");
     }
     if (hours < 10) {
       hours = "0" + hours;
@@ -71,7 +65,4 @@
 
     return (countdown.innerHTML = `${days} 天 ${hours} 小时 ${minutes} 分钟 ${seconds} 秒`);
   }
-
-  const timer = setInterval(updateCountdown, 1000);
-  countdown.innerHTML = updateCountdown();
 })();
