@@ -1,25 +1,35 @@
 ## domain-name
 
-一个简约的网页版顶级国际域名证书，方便自己或他人查看你的域名使用时长以及域名剩余时长。
+> 一个简约的网页版顶级国际域名证书模板，方便用来查看自己或他人的域名使用时长以及域名剩余时长。
+
+### 演示
 
 <details>
-<summary>查看演示</summary>
+<summary>点击查看</summary>
 
-域名到期前一个月以上：
+深色模式：
 
-![](./img/screenshots/secondary.png)
+![深色模式](./img/screenshots/dark.png)
+
+浅色模式：
+
+![浅色模式](./img/screenshots/light.png)
+
+移动端：
+
+![移动端](./img/screenshots/mobile.png)
 
 域名到期前一个月：
 
-![](./img/screenshots/primary.png)
+![域名到期前一个月](./img/screenshots/blue.png)
 
 域名到期前一个星期：
 
-![](./img/screenshots/warning.png)
+![域名到期前一个星期](./img/screenshots/yellow.png)
 
 域名到期后：
 
-![](./img/screenshots/danger.png)
+![域名到期后](./img/screenshots/red.png)
 
 </details>
 
@@ -30,7 +40,7 @@
 
 ### 使用
 
-直接`Fork`本仓库，然后将首页`index.html`中的`<script></script>`部分改为你自己的域名信息即可。
+直接`Fork`本仓库，然后将`index.html`中的`<script></script>`部分改为你自己的域名信息即可。
 
 ### 特征
 
@@ -56,4 +66,4 @@
 
 设计灵感借鉴于：<https://icp.gov.moe/?keyword=20246633>
 
-如果觉得这个项目还不错的话，请给我一个 **Star** 支持一下，这对我很重要，谢谢 ~
+如果觉得这个项目还不错的话，请给我一个 **Star** 支持一下，这对我很重要，谢谢！
