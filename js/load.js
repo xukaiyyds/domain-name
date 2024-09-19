@@ -3,7 +3,6 @@
   const loadText = document.querySelector(".load-text");
   const twinkle = document.querySelector(".twinkle");
   const loading = setInterval(blurring, 30);
-  const loadStart = sessionStorage.getItem("load");
   const scale = (num, in_min, in_max, out_min, out_max) => {
     return ((num - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min;
   };
@@ -13,16 +12,16 @@
   function blurring() {
     load++;
 
+    loadText.innerText = `${load}%`;
+    loadText.style.opacity = scale(load, 0, 100, 1, 0);
+
     if (load > 0) {
       loaded.classList.remove("display-none");
     }
 
-    if (Boolean(loadStart)) {
-      loadComplete();
+    if (Boolean(sessionStorage.load)) {
+      load = 100;
     }
-
-    loadText.innerText = `${load}%`;
-    loadText.style.opacity = scale(load, 0, 100, 1, 0);
 
     if (load > 20) {
       twinkle.classList.remove("display-none");
