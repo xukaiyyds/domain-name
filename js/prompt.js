@@ -71,6 +71,24 @@
     }
   });
 
+  /* 复制链接 */
+  document.getElementById("copy-url").addEventListener("click", async () => {
+    try {
+      const url = window.location.href;
+      await navigator.clipboard.writeText(url);
+      iziToast.show({
+        title: "复制成功",
+        titleLineHeight: 20,
+        message: "已复制分享链接至剪贴板",
+        icon: "iconfont icon-copy-link",
+        color: "green",
+        displayMode: "replace",
+      });
+    } catch (err) {
+      console.log("复制失败:", err);
+    }
+  });
+
   /* 导航菜单 */
   document.querySelector(".nav").addEventListener("click", () => {
     iziToast.show({
@@ -196,14 +214,17 @@
                     icon: "ico-success",
                     color: "green",
                   });
-                  setTimeout(function () {
-                    iziToast.show({
-                      message: "请在页面右下角切换主题",
-                      icon: "iconfont icon-info-remind",
-                      color: "blue",
-                      transitionIn: "bounceInDown",
-                    });
-                  }, 1500);
+                  Boolean(sessionStorage.theme_info_remind)
+                    ? ""
+                    : setTimeout(function () {
+                        sessionStorage.setItem("theme_info_remind", "true");
+                        iziToast.show({
+                          message: "请在页面右下角切换主题",
+                          icon: "iconfont icon-info-remind",
+                          color: "blue",
+                          transitionIn: "bounceInDown",
+                        });
+                      }, 1500);
                   lightTheme.children[1].textContent = "禁用主题";
                 }
 
@@ -347,14 +368,17 @@
                     icon: "iconfont icon-share-open",
                     color: "green",
                   });
-                  setTimeout(function () {
-                    iziToast.show({
-                      message: "请在页面左下角进行分享",
-                      icon: "iconfont icon-info-remind",
-                      color: "blue",
-                      transitionIn: "bounceInDown",
-                    });
-                  }, 1500);
+                  Boolean(sessionStorage.share_info_remind)
+                    ? ""
+                    : setTimeout(function () {
+                        sessionStorage.setItem("share_info_remind", "true");
+                        iziToast.show({
+                          message: "请在页面左下角进行分享",
+                          icon: "iconfont icon-info-remind",
+                          color: "blue",
+                          transitionIn: "bounceInDown",
+                        });
+                      }, 1500);
                   shareLinks.children[1].textContent = "关闭分享";
                 }
 
