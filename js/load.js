@@ -19,7 +19,7 @@
       loaded.classList.remove("display-none");
     }
 
-    if (Boolean(sessionStorage.load)) {
+    if (Boolean(sessionStorage.finished_loading)) {
       load = 100;
     }
 
@@ -37,7 +37,7 @@
 
   function loadComplete() {
     clearInterval(loading);
-    sessionStorage.setItem("load", "true");
+    sessionStorage.setItem("finished_loading", "true");
     loaded.classList.add("display-none");
   }
 })();
