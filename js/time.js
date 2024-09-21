@@ -1,6 +1,6 @@
 (function () {
   /* 域名使用时长 */
-  setInterval(updateTimer, 1000);
+  setInterval(updateTimer, 10000);
   document.getElementById("timer").innerHTML = updateTimer();
 
   function updateTimer() {
