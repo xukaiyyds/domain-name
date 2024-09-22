@@ -31,8 +31,8 @@
 }
 
 /* 导航菜单按钮 */
-.iziToast.iziToast-theme-dark .iziToast-buttons > button {
-  display: inline-flex !important;
+.iziToast.iziToast-theme-dark div.iziToast-buttons > button {
+  display: inline-flex;
   gap: 2px;
 }
 
@@ -51,8 +51,20 @@
   bottom: 1rem;
 }
 
-.social-share .social-share-icon {
-  border: 0 !important;
+.social-share-mend {
+  display: flex;
+}
+
+.social-share a.social-share-icon {
+  border: 0;
+}
+
+.social-share .social-share-icon:first-child {
+  color: #56b6e7;
+}
+
+.social-share .social-share-icon:first-child:hover {
+  background: #56b6e7;
 }
 
 .wechat-qrcode {

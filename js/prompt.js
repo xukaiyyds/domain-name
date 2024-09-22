@@ -79,7 +79,7 @@
       iziToast.show({
         title: "复制成功",
         titleLineHeight: 20,
-        message: "已复制分享链接至剪贴板",
+        message: "分享链接已拷贝到剪贴板",
         icon: "iconfont icon-copy-link",
         color: "green",
         displayMode: "replace",
@@ -115,13 +115,13 @@
           function (instance, toast) {},
         ],
         [
-          "<button class='full-screen'><i class='iconfont icon-full-screen'></i> <span>全屏</span></button>",
+          "<button class='full-screen'><i class='iconfont icon-full-screen'></i> <span>全屏显示</span></button>",
           function (instance, toast) {
             instance.hide({ transitionOut: "flipOutX" }, toast, "button");
           },
         ],
         [
-          "<button><i class='iconfont icon-close'></i> 关闭</button>",
+          "<button><i class='iconfont icon-close'></i> 关闭菜单</button>",
           function (instance, toast) {
             instance.hide({ transitionOut: "flipOutX" }, toast, "button");
           },
@@ -325,8 +325,7 @@
   function getShareSwitch() {
     if (getShareLinks) {
       shareComponent.classList.remove("display-none");
-    } else {
-      shareComponent.classList.add("display-none");
+      shareComponent.classList.add("social-share-mend");
     }
   }
 
@@ -363,6 +362,7 @@
 
                 if (getShareLinks) {
                   shareComponent.classList.remove("display-none");
+                  shareComponent.classList.add("social-share-mend");
                   iziToast.show({
                     title: "已开启",
                     icon: "iconfont icon-share-open",
@@ -426,6 +426,7 @@
                 );
 
                 if (!getShareLinks) {
+                  shareComponent.classList.remove("social-share-mend");
                   shareComponent.classList.add("display-none");
                   iziToast.show({
                     title: "已关闭",
