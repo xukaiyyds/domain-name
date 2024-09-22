@@ -74,7 +74,6 @@
 /* 明暗切换按钮 */
 .darkmode-toggle {
   font-size: 1.5rem;
-  box-shadow: 1px 1px 10px 0 #3763aa;
 }
 
 /* 浅色模式适配 */
@@ -89,6 +88,7 @@
 .darkmode--activated .container {
   color: #181c27;
   background-color: rgba(243, 245, 248, 0.6);
+  box-shadow: 0 0 10px #aaa;
 }
 
 .darkmode--activated .load-text,

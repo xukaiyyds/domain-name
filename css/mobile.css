@@ -192,9 +192,8 @@
   .container {
     max-width: 800px;
     padding: 60px;
-    border: 1px solid #eee;
     border-radius: 10px;
-    box-shadow: 0 0 10px #aaa;
+    box-shadow: 0 0 10px #3763aa;
   }
 
   /* 头部内容 */
@@ -228,7 +227,7 @@
   }
 
   .divider {
-    margin: 19.3px 0;
+    margin: 20.1px 0;
     height: 3px;
   }
 
