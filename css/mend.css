@@ -33,6 +33,7 @@
 /* 导航菜单按钮 */
 .iziToast.iziToast-theme-dark div.iziToast-buttons > button {
   display: inline-flex;
+  align-items: center;
   gap: 2px;
 }
 
