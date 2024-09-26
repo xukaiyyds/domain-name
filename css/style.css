@@ -61,6 +61,10 @@
   filter: blur(5px);
 }
 
+.bg.no-bg-image::before {
+  background-image: none;
+}
+
 .container {
   display: flex;
   flex-direction: column;

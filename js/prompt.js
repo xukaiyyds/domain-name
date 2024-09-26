@@ -80,7 +80,7 @@
         title: "复制成功",
         titleLineHeight: 20,
         message: "分享链接已拷贝到剪贴板",
-        icon: "iconfont icon-copy-link",
+        icon: "iconfont icon-copy-success",
         color: "green",
         displayMode: "replace",
       });
@@ -115,7 +115,11 @@
           function (instance, toast) {},
         ],
         [
-          "<button class='full-screen'><i class='iconfont icon-full-screen'></i> <span>全屏显示</span></button>",
+          "<button class='hide-background'><i class='iconfont icon-hide-background'></i> <span>隐藏背景</span></button>",
+          function (instance, toast) {},
+        ],
+        [
+          "<button class='full-screen'><i class='iconfont icon-full-screen'></i> <span>全屏模式</span></button>",
           function (instance, toast) {
             instance.hide({ transitionOut: "flipOutX" }, toast, "button");
           },
@@ -123,13 +127,14 @@
         [
           "<button><i class='iconfont icon-close'></i> 关闭菜单</button>",
           function (instance, toast) {
-            instance.hide({ transitionOut: "flipOutX" }, toast, "button");
+            instance.hide({ transitionOut: "fadeOut" }, toast, "button");
           },
         ],
       ],
     });
     ThemeSwitch();
     shareSwitch();
+    hideBackgroundSwitch();
     fullScreenSwitch();
   });
 
@@ -458,6 +463,45 @@
             ],
           ],
         });
+      }
+    });
+  }
+
+  /* 背景开关 */
+  const bg = document.querySelector(".bg");
+
+  if (Boolean(localStorage.no_background_image)) {
+    bg.classList.add("no-bg-image");
+  } else {
+    bg.classList.remove("no-bg-image");
+  }
+
+  function hideBackgroundSwitch() {
+    const hideBackground = document.querySelector(".hide-background");
+
+    if (Boolean(localStorage.no_background_image)) {
+      hideBackground.children[1].textContent = "显示背景";
+    }
+
+    hideBackground.addEventListener("click", function () {
+      if (bg.classList.contains("no-bg-image")) {
+        localStorage.removeItem("no_background_image");
+        bg.classList.remove("no-bg-image");
+        iziToast.show({
+          title: "已显示",
+          icon: "iconfont icon-hide",
+          color: "green",
+        });
+        hideBackground.children[1].textContent = "隐藏背景";
+      } else {
+        localStorage.setItem("no_background_image", "true");
+        bg.classList.add("no-bg-image");
+        iziToast.show({
+          title: "已隐藏",
+          icon: "iconfont icon-display",
+          color: "green",
+        });
+        hideBackground.children[1].textContent = "显示背景";
       }
     });
   }
