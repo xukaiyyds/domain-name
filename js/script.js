@@ -33,6 +33,8 @@ function fullScreenSwitch() {
 }
 
 /* 开源不易，以下信息请不要修改哦 */
+const myProject = "https://github.com/xukaiyyds/domain-name";
+document.querySelector(".github-corner").href = myProject;
 console.log(
   "%c 顶级国际域名证书 %c Made by xukaiyyds %c",
   "background: #35495e; padding: 1px; border-radius: 3px 0 0 3px; color: #fff",
@@ -40,7 +42,7 @@ console.log(
   "background: transparent"
 );
 console.log(
-  "%c GitHub源代码仓库 %c https://github.com/xukaiyyds/domain-name %c",
+  `%c GitHub源代码仓库 %c ${myProject} %c`,
   "background: #35495e; padding: 1px; border-radius: 3px 0 0 3px; color: #fff",
   "background: #41b883; padding: 1px; border-radius: 0 3px 3px 0; color: #fff",
   "background: transparent"

@@ -11,7 +11,7 @@
     <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
     <link rel="icon" type="image/png" href="img/favicon.png">
     <!-- iconfont - Project id 4426263 -->
-    <link rel="stylesheet" href="https://at.alicdn.com/t/c/font_4426263_mjefmxfnxab.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/c/font_4426263_bp6mpxlrklo.css">
     <!-- minireset.css -->
     <link rel="stylesheet" href="https://jsd.onmicrosoft.cn/npm/minireset.css@0.0.7/minireset.min.css">
     <!-- css link -->
@@ -90,13 +90,11 @@
     </div>
 
     <div class="share-component social-share display-none" data-sites="qzone,wechat,weibo,douban"
-        data-wechat-qrcode-title="微信扫码分享" data-wechat-qrcode-helper="<p>手机微信扫描二维码，点击</p><p>右上角 ··· 按钮分享到朋友圈</p>">
+        data-wechat-qrcode-title="微信扫码分享" data-wechat-qrcode-helper="<p>手机微信扫描二维码，点击<br>右上角 ··· 按钮分享到朋友圈</p>">
         <a id="copy-url" class="social-share-icon icon-heart" title="复制链接"></a>
     </div>
 
-    <!-- 开源不易，以下信息请不要修改哦 -->
-    <a href="https://github.com/xukaiyyds/domain-name" class="github-corner" target="_blank"
-        aria-label="在 GitHub 上查看源代码">
+    <a class="github-corner" target="_blank" aria-label="在 GitHub 上查看源代码">
         <svg viewBox="0 0 250 250" aria-hidden="true">
             <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
             <path
@@ -108,13 +106,13 @@
         </svg>
     </a>
 
-    <!-- 请在下方自行修改你的域名信息 -->
     <script>
         const domain = document.querySelectorAll('.domain');
         const name = document.querySelectorAll('.name');
         const cloud = document.querySelector('.cloud');
         const filings = document.querySelector('.filings');
 
+        /* 请在下方自行修改你的域名信息 */
         document.querySelector('.title').textContent = "中国国家顶级域名注册证书"; // 证书名称
         for (let i = 0; i < 2; i++) {
             domain[i].textContent = "xukaiyyds.cn"; // 域名
