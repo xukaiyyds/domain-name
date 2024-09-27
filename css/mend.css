@@ -68,8 +68,14 @@
   background: #56b6e7;
 }
 
-.wechat-qrcode {
-  background-color: #252d38 !important;
+.social-share .icon-wechat div.wechat-qrcode {
+  border: none;
+  box-shadow: none;
+  background-color: #252d38;
+}
+
+.social-share .icon-wechat div.wechat-qrcode:after {
+  border-top-color: #252d38;
 }
 
 /* 明暗切换按钮 */
@@ -125,6 +131,10 @@
   fill: #f3f5f8;
 }
 
-.darkmode--activated .wechat-qrcode {
-  background-color: #e1e1e1 !important;
+.darkmode--activated .social-share .icon-wechat div.wechat-qrcode {
+  background-color: #e1e1e1;
+}
+
+.darkmode--activated .social-share .icon-wechat div.wechat-qrcode:after {
+  border-top-color: #e1e1e1;
 }

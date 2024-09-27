@@ -1,43 +1,44 @@
-@media (min-width: 375px) {
-  html {
-    font-size: calc(100% + 2 * (100vw - 375px) / 39);
-    font-size: calc(16px + 2 * (100vw - 375px) / 39);
-  }
-}
-
-@media (min-width: 414px) {
-  html {
-    font-size: calc(112.5% + 4 * (100vw - 414px) / 586);
-    font-size: calc(18px + 4 * (100vw - 414px) / 586);
-  }
-}
-
-@media (min-width: 600px) {
-  html {
-    font-size: calc(125% + 4 * (100vw - 600px) / 400);
-    font-size: calc(20px + 4 * (100vw - 600px) / 400);
-  }
-}
-
-@media (min-width: 1000px) {
-  html {
-    font-size: calc(137.5% + 6 * (100vw - 1000px) / 1000);
-    font-size: calc(22px + 6 * (100vw - 1000px) / 1000);
-  }
-}
-
 /* 移动端 */
-@media (max-width: 600px) {
-  .footer {
-    padding-top: 1rem;
-  }
-
-  .filings-icp {
-    top: 2rem;
-  }
-}
-
 @media (max-width: 1024px), (orientation: portrait), (any-hover: none) {
+  /* 响应式 */
+  @media (min-width: 375px) {
+    html {
+      font-size: calc(100% + 2 * (100vw - 375px) / 39);
+      font-size: calc(16px + 2 * (100vw - 375px) / 39);
+    }
+  }
+
+  @media (min-width: 414px) {
+    html {
+      font-size: calc(112.5% + 4 * (100vw - 414px) / 586);
+      font-size: calc(18px + 4 * (100vw - 414px) / 586);
+    }
+  }
+
+  @media (min-width: 600px) {
+    html {
+      font-size: calc(125% + 4 * (100vw - 600px) / 400);
+      font-size: calc(20px + 4 * (100vw - 600px) / 400);
+    }
+  }
+
+  @media (min-width: 1000px) {
+    html {
+      font-size: calc(137.5% + 6 * (100vw - 1000px) / 1000);
+      font-size: calc(22px + 6 * (100vw - 1000px) / 1000);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .footer {
+      padding-top: 1rem;
+    }
+
+    .filings-icp {
+      top: 2rem;
+    }
+  }
+
   /* GitHub Corners */
   .github-corner svg {
     left: 0;
@@ -151,7 +152,7 @@
   }
 }
 
-/* 桌面端 */
+/* PC端 */
 @media (min-width: 1024px) and (orientation: landscape) and (hover: hover) {
   /* 鼠标指针 */
   body,
