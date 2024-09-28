@@ -40,7 +40,7 @@
 
 ### 使用
 
-直接`Fork`本仓库，然后将`index.html`中的`<script></script>`部分改为你自己的域名信息即可。
+直接`Fork`本仓库或者下载[最新版](https://github.com/xukaiyyds/domain-name/releases/latest)到本地，然后将`index.html`中的`<script></script>`部分改为你自己的域名信息即可。
 
 ### 特征
 
