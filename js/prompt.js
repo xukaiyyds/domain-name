@@ -119,6 +119,12 @@
           function (instance, toast) {},
         ],
         [
+          "<button class='date-conversion'><i class='iconfont icon-date-conversion'></i> <span>日期转换</span></button>",
+          function (instance, toast) {
+            instance.hide({ transitionOut: "flipOutX" }, toast, "button");
+          },
+        ],
+        [
           "<button class='full-screen'><i class='iconfont icon-full-screen'></i> <span>全屏模式</span></button>",
           function (instance, toast) {
             instance.hide({ transitionOut: "flipOutX" }, toast, "button");
@@ -135,6 +141,7 @@
     ThemeSwitch();
     shareSwitch();
     hideBackgroundSwitch();
+    dateConversionSwitch();
     fullScreenSwitch();
   });
 
@@ -467,7 +474,7 @@
     });
   }
 
-  /* 背景开关 */
+  /* 隐藏背景开关 */
   const bg = document.querySelector(".bg");
 
   if (Boolean(localStorage.no_background_image)) {
@@ -502,6 +509,29 @@
           color: "green",
         });
         hideBackground.children[1].textContent = "显示背景";
+      }
+    });
+  }
+
+  /* 日期转换开关 */
+  function dateConversionSwitch() {
+    const dateConversion = document.querySelector(".date-conversion");
+
+    dateConversion.addEventListener("click", function () {
+      if (Boolean(localStorage.convert_days)) {
+        localStorage.removeItem("convert_days");
+        iziToast.show({
+          message: "已转换为年月日形式",
+          icon: "iconfont icon-days-conversion",
+          color: "green",
+        });
+      } else {
+        localStorage.setItem("convert_days", "true");
+        iziToast.show({
+          message: "已转换为天数形式",
+          icon: "iconfont icon-days-conversion",
+          color: "green",
+        });
       }
     });
   }
