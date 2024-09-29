@@ -32,8 +32,8 @@
 
 /* 导航菜单按钮 */
 .iziToast-overlay {
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
 }
 
 .iziToast.iziToast-theme-dark div.iziToast-buttons > button {

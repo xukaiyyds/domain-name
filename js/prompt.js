@@ -103,7 +103,7 @@
       transitionIn: "fadeInDown",
       transitionOut: "fadeOut",
       overlay: true,
-      overlayColor: "rgba(0, 0, 0, 0.8)",
+      // overlayColor: "rgba(0, 0, 0, 0.8)",
       theme: "dark",
       buttons: [
         [
