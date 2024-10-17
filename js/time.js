@@ -36,13 +36,9 @@
     const currentTime = currentDate.getTime();
     const targetTime = endTime.getTime();
     const remainingTime = targetTime - currentTime;
-    let years = Math.floor(remainingTime / (1000 * 60 * 60 * 24 * 365));
-    let months = Math.floor(
-      (remainingTime % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30)
-    );
-    let days = Math.floor(
-      (remainingTime % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24)
-    );
+    let days = Math.round(remainingTime / (1000 * 3600 * 24));
+    let months = Math.floor(days / 30);
+    let years = Math.floor(months / 12);
     let hours = Math.floor(
       (remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
     );
@@ -65,9 +61,13 @@
     }
 
     if (years >= 1) {
-      return (countdown.innerHTML = `${years} 年 ${months} 月 ${days} 天 ${hours} 小时 ${minutes} 分钟 ${seconds} 秒`);
+      return (countdown.innerHTML = `${years} 年 ${months % 12} 月 ${
+        days % 30
+      } 天 ${hours} 小时 ${minutes} 分钟 ${seconds} 秒`);
     } else if (months >= 1) {
-      return (countdown.innerHTML = `${months} 月 ${days} 天 ${hours} 小时 ${minutes} 分钟 ${seconds} 秒`);
+      return (countdown.innerHTML = `${months} 月 ${
+        days % 30
+      } 天 ${hours} 小时 ${minutes} 分钟 ${seconds} 秒`);
     } else {
       // 到期
       expireColorPrompt();
