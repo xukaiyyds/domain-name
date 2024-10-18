@@ -6,23 +6,31 @@
 
   function updateTimer() {
     const currentDate = new Date();
-    const differenceInTime = currentDate.getTime() - startTime.getTime();
-    const differenceInDays = differenceInTime / (1000 * 3600 * 24);
-    const differenceInMonths = differenceInDays / 30;
-    const differenceInYears = differenceInMonths / 12;
+    const years = currentDate.getFullYear() - startTime.getFullYear();
+    const months = currentDate.getMonth() + 1 - (startTime.getMonth() + 1);
+    const days = currentDate.getDate() - startTime.getDate();
 
-    if (differenceInYears >= 1) {
-      return (timer.innerHTML = `${Math.floor(
-        differenceInYears
-      )} 年 ${Math.floor(differenceInMonths % 12)} 月 ${Math.round(
-        differenceInDays % 30
-      )} 天`);
-    } else if (differenceInMonths >= 1) {
-      return (timer.innerHTML = `${Math.floor(
-        differenceInMonths
-      )} 月 ${Math.round(differenceInDays % 30)} 天`);
+    if (months < 0 || (months === 0 && days < 0)) {
+      years--;
+      months += 12;
+    }
+
+    if (days < 0) {
+      const lastDayOfStartMonth = new Date(
+        currentDate.getFullYear(),
+        currentDate.getMonth() + 1,
+        0
+      ).getDate();
+      months--;
+      days += lastDayOfStartMonth;
+    }
+
+    if (years >= 1) {
+      return (timer.innerHTML = `${years} 年 ${months} 月 ${days} 天`);
+    } else if (months >= 1) {
+      return (timer.innerHTML = `${months} 月 ${days} 天`);
     } else {
-      return (timer.innerHTML = `${Math.round(differenceInDays)} 天`);
+      return (timer.innerHTML = `${days} 天`);
     }
   }
 
@@ -36,9 +44,25 @@
     const currentTime = currentDate.getTime();
     const targetTime = endTime.getTime();
     const remainingTime = targetTime - currentTime;
-    let days = Math.round(remainingTime / (1000 * 3600 * 24));
-    let months = Math.floor(days / 30);
-    let years = Math.floor(months / 12);
+    let years = endTime.getFullYear() - currentDate.getFullYear();
+    let months = endTime.getMonth() + 1 - (currentDate.getMonth() + 1);
+    let days = endTime.getDate() - currentDate.getDate();
+
+    if (months < 0 || (months === 0 && days < 0)) {
+      years--;
+      months += 12;
+    }
+
+    if (days < 0) {
+      const lastDayOfStartMonth = new Date(
+        currentDate.getFullYear(),
+        currentDate.getMonth() + 1,
+        0
+      ).getDate();
+      months--;
+      days += lastDayOfStartMonth;
+    }
+
     let hours = Math.floor(
       (remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
     );
@@ -61,15 +85,10 @@
     }
 
     if (years >= 1) {
-      return (countdown.innerHTML = `${years} 年 ${months % 12} 月 ${
-        days % 30
-      } 天 ${hours} 小时 ${minutes} 分钟 ${seconds} 秒`);
+      return (countdown.innerHTML = `${years} 年 ${months} 月 ${days} 天`);
     } else if (months >= 1) {
-      return (countdown.innerHTML = `${months} 月 ${
-        days % 30
-      } 天 ${hours} 小时 ${minutes} 分钟 ${seconds} 秒`);
+      return (countdown.innerHTML = `${months} 月 ${days} 天`);
     } else {
-      // 到期
       expireColorPrompt();
       if (remainingTime <= 0) {
         clearInterval(clearCountdown);
