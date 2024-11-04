@@ -6,9 +6,9 @@
 
   function updateTimer() {
     const currentDate = new Date();
-    const years = currentDate.getFullYear() - startTime.getFullYear();
-    const months = currentDate.getMonth() + 1 - (startTime.getMonth() + 1);
-    const days = currentDate.getDate() - startTime.getDate();
+    let years = currentDate.getFullYear() - startTime.getFullYear();
+    let months = currentDate.getMonth() + 1 - (startTime.getMonth() + 1);
+    let days = currentDate.getDate() - startTime.getDate();
 
     if (months < 0 || (months === 0 && days < 0)) {
       years--;
