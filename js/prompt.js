@@ -2,6 +2,7 @@
   /* 弹窗默认设置 */
   iziToast.settings({
     timeout: 2000,
+    close: false,
     closeOnEscape: true,
     displayMode: 1,
     layout: 2,
@@ -96,6 +97,7 @@
       title: "个性化配置",
       titleLineHeight: 22,
       icon: "iconfont icon-nav-menu",
+      close: true,
       closeOnEscape: false,
       progressBar: false,
       drag: false,
@@ -108,15 +110,21 @@
       buttons: [
         [
           "<button class='light-theme'><i class='iconfont icon-light-theme'></i> <span>启用主题</span></button>",
-          function (instance, toast) {},
+          function (instance, toast) {
+            instance.hide({ transitionOut: "flipOutX" }, toast, "button");
+          },
         ],
         [
           "<button class='share-links'><i class='iconfont icon-share'></i> <span>开启分享</span></button>",
-          function (instance, toast) {},
+          function (instance, toast) {
+            instance.hide({ transitionOut: "flipOutX" }, toast, "button");
+          },
         ],
         [
           "<button class='hide-background'><i class='iconfont icon-hide-background'></i> <span>隐藏背景</span></button>",
-          function (instance, toast) {},
+          function (instance, toast) {
+            instance.hide({ transitionOut: "flipOutX" }, toast, "button");
+          },
         ],
         [
           "<button class='date-conversion'><i class='iconfont icon-date-conversion'></i> <span>日期转换</span></button>",
