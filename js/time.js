@@ -84,17 +84,19 @@
       return (countdown.innerHTML = `${days} 天 ${hours} 小时 ${minutes} 分钟 ${seconds} 秒`);
     }
 
+    if (remainingTime <= 0) {
+      expireColorPrompt();
+      clearInterval(clearCountdown);
+      return (countdown.innerHTML = "0 天");
+    }
+
     if (years >= 1) {
       return (countdown.innerHTML = `${years} 年 ${months} 月 ${days} 天`);
     } else if (months >= 1) {
       return (countdown.innerHTML = `${months} 月 ${days} 天`);
     } else {
       expireColorPrompt();
-      if (remainingTime <= 0) {
-        clearInterval(clearCountdown);
-        return (countdown.innerHTML = "0 天 00 小时 00 分钟 00 秒");
-      }
-      return (countdown.innerHTML = `${days} 天 ${hours} 小时 ${minutes} 分钟 ${seconds} 秒`);
+      return (countdown.innerHTML = `${days} 天`);
     }
 
     // 到期颜色提醒
