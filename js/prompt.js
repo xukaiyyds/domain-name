@@ -23,6 +23,7 @@
       if (countdown.classList.contains("countdown-blue")) {
         iziToast.show({
           timeout: 3000,
+          close: true,
           title: "温馨提醒",
           titleLineHeight: 20,
           message: "域名剩余时长已不足 30 天",
@@ -33,6 +34,7 @@
       if (countdown.classList.contains("countdown-yellow")) {
         iziToast.show({
           timeout: 4000,
+          close: true,
           title: "温馨提醒",
           titleLineHeight: 20,
           message: "域名剩余时长已不足 7 天，请及时续费",
@@ -43,6 +45,7 @@
       if (countdown.classList.contains("countdown-red")) {
         iziToast.show({
           timeout: 5000,
+          close: true,
           title: "温馨提醒",
           titleLineHeight: 20,
           message: `域名已到期，请前往${cloud.textContent}进行续费`,
@@ -274,6 +277,7 @@
         if (darkmode.isActivated()) {
           iziToast.show({
             timeout: 3000,
+            close: true,
             title: "温馨提示",
             titleLineHeight: 20,
             message: "无法禁用！请先切换到深色主题",
