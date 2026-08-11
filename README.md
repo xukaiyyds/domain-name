@@ -11,27 +11,27 @@
 
 深色模式：
 
-![深色模式](./img/screenshots/dark.png)
+![深色模式](https://domains.xukaiyyds.cn/img/screenshots/dark.png)
 
 浅色模式：
 
-![浅色模式](./img/screenshots/light.png)
+![浅色模式](https://domains.xukaiyyds.cn/img/screenshots/light.png)
 
 移动端：
 
-![移动端](./img/screenshots/mobile.png)
+![移动端](https://domains.xukaiyyds.cn/img/screenshots/mobile.png)
 
 域名到期前一个月：
 
-![域名到期前一个月](./img/screenshots/blue.png)
+![域名到期前一个月](https://domains.xukaiyyds.cn/img/screenshots/blue.png)
 
 域名到期前一个星期：
 
-![域名到期前一个星期](./img/screenshots/yellow.png)
+![域名到期前一个星期](https://domains.xukaiyyds.cn/img/screenshots/yellow.png)
 
 域名到期后：
 
-![域名到期后](./img/screenshots/red.png)
+![域名到期后](https://domains.xukaiyyds.cn/img/screenshots/red.png)
 
 </details>
 
@@ -50,6 +50,7 @@
 - [x] 浅色主题
 - [x] 操作反馈
 - [x] 分享证书
+- [] 英汉翻译
 
 功能部分对应用到了以下插件：
 
