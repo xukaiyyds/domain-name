@@ -1,7 +1,7 @@
 (function () {
   /* 域名使用时长 */
   const timer = document.getElementById("timer");
-  setInterval(updateTimer, 10000);
+  const endYear = setInterval(updateTimer, 10000);
   updateTimer();
 
   function updateTimer() {
@@ -44,6 +44,12 @@
     const currentTime = currentDate.getTime();
     const targetTime = endTime.getTime();
     const remainingTime = targetTime - currentTime;
+    // 结束年份
+    if (remainingTime <= 0) {
+      clearInterval(endYear);
+      let endYears = endTime.getFullYear() - startTime.getFullYear();
+      timer.innerHTML = `${endYears} 年`;
+    }
     let years = endTime.getFullYear() - currentDate.getFullYear();
     let months = endTime.getMonth() + 1 - (currentDate.getMonth() + 1);
     let days = endTime.getDate() - currentDate.getDate();
