@@ -213,7 +213,7 @@
     opacity: 1;
   }
 
-  .header:hover .nav {
+  .nav:hover {
     transform: scale(1.2);
   }
 
