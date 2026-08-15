@@ -547,4 +547,55 @@
       }
     });
   }
+
+  /* 域名证书声明 */
+  document.querySelector(".statement").addEventListener("click", () => {
+    iziToast.question({
+      timeout: false,
+      overlay: true,
+      displayMode: 'once',
+      position: 'center',
+      transitionIn: 'fadeIn',
+      icon: 'iconfont icon-dragon',
+      iconColor: '#D9534F',
+      // 请自行修改
+      title: '本证书由中国顶级域名权威机构 CNNIC（China Internet Network Information Center）授权 广州云讯信息科技有限公司（Guangzhou Yunxun Information Technology Co.，Ltd.）制作并颁发。',
+      titleColor: '#F0AD4E',
+      titleSize: '1.25rem',
+      titleLineHeight: '2',
+      buttons: [
+        ['<button>查看详情</button>', function (instance, toast) {
+
+          instance.hide({ transitionOut: 'fadeOutUp' }, toast, 'button');
+          iziToast.info({
+            timeout: false,
+            overlay: true,
+            icon: false,
+            displayMode: 'once',
+            position: 'center',
+            transitionIn: 'bounceInUp',
+            message: `<p>1. 本证书表明证书上列出的个人或组织为所列出域名的合法注册人，该注册人依法享有该域名下之各项权利。</p>
+                      <p>2. 本证书并不表明域名所属注册机构对本证书所列域名是否贬斥、侵害或毁损任何第三人之合法机利或利益作出任何明示或默示之评判、确认、担保，或作出其它任何形式之意思表示。域名所属注册机构亦无任何责任或义务作出上述之评判、确认、担保，或作出其它任何形式之意思表示。</p>
+                      <p>3. 若域名被转让、转出域名所属注册机构、被删除或发生其他改变域名状态及所有人信息的情况，则本证书不再具有证明效力。</p>
+                      <p>4. 腾讯云域名注册服务由腾讯云计算（北京）有限责任公司（TencentCloud Computing(Beijing）LimitedLiabilityCompany）、烟台帝思普网络科技有限公司（DNSPod,Inc.）、广州云讯信息科技有限公司（Guang zhouYunxun Information Technology Co.,Ltd.)提供，上述公司及品牌均为腾讯云公司所有。</p>`,
+            messageColor: '#428BCA',
+            messageSize: '1rem',
+            messageLineHeight: '20',
+            buttons: [
+              ['<button>我已知晓</button>', function (instance, toast) {
+
+                instance.hide({ transitionOut: 'fadeOutDown' }, toast, 'button');
+
+              }, true],
+            ],
+          });
+        }],
+        ['<button><b>我已知晓</b></button>', function (instance, toast) {
+
+          instance.hide({ transitionOut: 'fadeOutDown' }, toast, 'button');
+
+        }, true],
+      ],
+    });
+  });
 })();

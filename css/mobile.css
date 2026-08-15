@@ -161,7 +161,7 @@
   }
 
   .loaded,
-  .nav i,
+  .header i,
   a,
   button {
     cursor: url("../img/cursor/link.cur"), pointer !important;
