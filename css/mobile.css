@@ -191,8 +191,8 @@
   }
 
   .container {
-    max-width: 800px;
-    padding: 60px;
+    max-width: 840px;
+    padding: 70px;
     border-radius: 10px;
     box-shadow: 0 0 10px #3763aa;
   }
@@ -235,6 +235,7 @@
   /* 主体内容 */
   .describe {
     font-size: 18px;
+    line-height: 1.2;
   }
 
   .link:hover,
