@@ -11,7 +11,7 @@
     <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
     <link rel="icon" type="image/png" href="img/favicon.png">
     <!-- iconfont - Project id 4426263 -->
-    <link rel="stylesheet" href="https://at.alicdn.com/t/c/font_4426263_8zr7mrvb4gc.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/c/font_4426263_ntv99uvt7pc.css">
     <!-- minireset.css -->
     <link rel="stylesheet" href="https://jsd.onmicrosoft.cn/npm/minireset.css@0.0.7/minireset.min.css">
     <!-- css link -->
@@ -41,39 +41,39 @@
         </header>
         <main class="main">
             <p class="describe">
-                域名
+                <span class="describe-one"></span>
                 <a class="link" target="_blank"><span class="domain"></span></a>
-                已由
+                <span class="describe-two"></span>
                 <a class="link" target="_blank"><span class="name"></span></a>
-                完成注册，并已在国际顶级域名数据库中记录。
+                <span class="describe-three"></span>
             </p>
             <table class="info">
                 <tr>
-                    <th>域名</th>
+                    <th><span class="domain-name"></span></th>
                     <td class="omit-text"><span class="domain"></span></td>
                 </tr>
                 <tr>
-                    <th>域名所有者</th>
+                    <th><span class="registrant"></span></th>
                     <td><span class="name"></span></td>
                 </tr>
                 <tr>
-                    <th>域名所属注册机构</th>
+                    <th><span class="registrar"></span></th>
                     <td><span class="company"></span></td>
                 </tr>
                 <tr>
-                    <th>域名注册时间</th>
+                    <th><span class="registration-date"></span></th>
                     <td class="digit"><span class="start"></span></td>
                 </tr>
                 <tr>
-                    <th>域名到期时间</th>
+                    <th><span class="expiration-date"></span></th>
                     <td class="digit"><span class="end"></span></td>
                 </tr>
                 <tr>
-                    <th>域名使用时长</th>
+                    <th><span class="usage-duration"></span></th>
                     <td class="digit"><span id="timer"></span></td>
                 </tr>
                 <tr>
-                    <th>域名剩余时长</th>
+                    <th><span class="remaining-duration"></span></th>
                     <td class="digit"><span id="countdown"></span></td>
                 </tr>
             </table>
@@ -113,14 +113,12 @@
         const filings = document.querySelector('.filings');
 
         /* 请在下方自行修改你的域名信息 */
-        document.querySelector('.title').textContent = "中国国家顶级域名注册证书"; // 证书名称
         for (let i = 0; i < 2; i++) {
             domain[i].textContent = "xukaiyyds.cn"; // 域名
             name[i].textContent = "徐凯"; // 域名所有者
         }
-        document.querySelectorAll('.link')[0].href = "https://" + domain[0].textContent; // 域名链接
+        document.querySelectorAll('.link')[0].href = "https://" + domain[0].textContent; // 域名链接（不用动）
         document.querySelectorAll('.link')[1].href = "img/certificate/xukaiyyds.cn.certificate.jpg"; // 域名所有者链接
-        document.querySelector('.company').textContent = "广州云讯信息科技有限公司"; // 域名所属注册机构
         const startTime = new Date("2021-10-16T21:45:32"); // 域名注册时间
         const endTime = new Date("2026-10-16T21:45:32"); // 域名到期时间
         cloud.textContent = "腾讯云"; // 域名服务商
@@ -137,6 +135,7 @@
     </script>
 
     <!-- js async link -->
+    <script src="js/translation.js"></script>
     <script async src="js/load.js"></script>
     <script async src="js/time.js"></script>
     <!-- Pace.js -->

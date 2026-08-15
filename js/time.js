@@ -26,11 +26,11 @@
     }
 
     if (years >= 1) {
-      return (timer.innerHTML = `${years} 年 ${months} 月 ${days} 天`);
+      return (timer.innerHTML = `${years} ${nian} ${months} ${yue} ${days} ${tian}`);
     } else if (months >= 1) {
-      return (timer.innerHTML = `${months} 月 ${days} 天`);
+      return (timer.innerHTML = `${months} ${yue} ${days} ${tian}`);
     } else {
-      return (timer.innerHTML = `${days} 天`);
+      return (timer.innerHTML = `${days} ${tian}`);
     }
   }
 
@@ -48,7 +48,7 @@
     if (remainingTime <= 0) {
       clearInterval(endYear);
       let endYears = endTime.getFullYear() - startTime.getFullYear();
-      timer.innerHTML = `${endYears} 年`;
+      timer.innerHTML = `${endYears} ${nian}`;
     }
     let years = endTime.getFullYear() - currentDate.getFullYear();
     let months = endTime.getMonth() + 1 - (currentDate.getMonth() + 1);
@@ -85,24 +85,24 @@
       expireColorPrompt();
       if (remainingTime <= 0) {
         clearInterval(clearCountdown);
-        return (countdown.innerHTML = "0 天 00 小时 00 分钟 00 秒");
+        return (countdown.innerHTML = `0 ${tian} 00 ${xiaoshi} 00 ${fenzhong} 00 ${miao}`);
       }
-      return (countdown.innerHTML = `${days} 天 ${hours} 小时 ${minutes} 分钟 ${seconds} 秒`);
+      return (countdown.innerHTML = `${days} ${tian} ${hours} ${xiaoshi} ${minutes} ${fenzhong} ${seconds} ${miao}`);
     }
 
     if (remainingTime <= 0) {
       expireColorPrompt();
       clearInterval(clearCountdown);
-      return (countdown.innerHTML = "0 天");
+      return (countdown.innerHTML = `0 ${tian}`);
     }
 
     if (years >= 1) {
-      return (countdown.innerHTML = `${years} 年 ${months} 月 ${days} 天`);
+      return (countdown.innerHTML = `${years} ${nian} ${months} ${yue} ${days} ${tian}`);
     } else if (months >= 1) {
-      return (countdown.innerHTML = `${months} 月 ${days} 天`);
+      return (countdown.innerHTML = `${months} ${yue} ${days} ${tian}`);
     } else {
       expireColorPrompt();
-      return (countdown.innerHTML = `${days} 天`);
+      return (countdown.innerHTML = `${days} ${tian}`);
     }
 
     // 到期颜色提醒

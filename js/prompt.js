@@ -124,7 +124,7 @@
           },
         ],
         [
-          "<button class='hide-background'><i class='iconfont icon-hide-background'></i> <span>隐藏背景</span></button>",
+          "<button class='translation'><i class='iconfont icon-translation'></i> <span>英汉翻译</span></button>",
           function (instance, toast) {
             instance.hide({ transitionOut: "flipOutX" }, toast, "button");
           },
@@ -136,23 +136,30 @@
           },
         ],
         [
-          "<button class='full-screen'><i class='iconfont icon-full-screen'></i> <span>全屏模式</span></button>",
+          "<button class='hide-background'><i class='iconfont icon-hide-background'></i> <span>隐藏背景</span></button>",
           function (instance, toast) {
             instance.hide({ transitionOut: "flipOutX" }, toast, "button");
           },
         ],
         [
-          "<button><i class='iconfont icon-close'></i> 关闭菜单</button>",
+          "<button class='full-screen'><i class='iconfont icon-full-screen'></i> <span>全屏模式</span></button>",
           function (instance, toast) {
-            instance.hide({ transitionOut: "fadeOut" }, toast, "button");
+            instance.hide({ transitionOut: "flipOutX" }, toast, "button");
           },
         ],
+        // [
+        //   "<button><i class='iconfont icon-close'></i> 关闭菜单</button>",
+        //   function (instance, toast) {
+        //     instance.hide({ transitionOut: "fadeOut" }, toast, "button");
+        //   },
+        // ],
       ],
     });
     ThemeSwitch();
     shareSwitch();
-    hideBackgroundSwitch();
+    translationSwitch();
     dateConversionSwitch();
+    hideBackgroundSwitch();
     fullScreenSwitch();
   });
 
@@ -542,6 +549,31 @@
         iziToast.show({
           message: "已转换为天数形式",
           icon: "iconfont icon-days-conversion",
+          color: "green",
+        });
+      }
+    });
+  }
+
+  /* 英汉翻译开关 */
+  function translationSwitch() {
+    const translation = document.querySelector(".translation");
+
+    translation.addEventListener("click", function () {
+      if (Boolean(localStorage.translations)) {
+        localStorage.removeItem("translations");
+        Chinese();
+        iziToast.show({
+          message: "已切换为中文",
+          icon: "iconfont icon-zhongwen",
+          color: "green",
+        });
+      } else {
+        localStorage.setItem("translations", "true");
+        English();
+        iziToast.show({
+          message: "Switched to English",
+          icon: "iconfont icon-yingwen",
           color: "green",
         });
       }
