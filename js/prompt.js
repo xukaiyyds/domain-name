@@ -124,6 +124,12 @@
           },
         ],
         [
+          "<button class='hide-background'><i class='iconfont icon-hide-background'></i> <span>隐藏背景</span></button>",
+          function (instance, toast) {
+            instance.hide({ transitionOut: "flipOutX" }, toast, "button");
+          },
+        ],
+        [
           "<button class='translation'><i class='iconfont icon-translation'></i> <span>英汉翻译</span></button>",
           function (instance, toast) {
             instance.hide({ transitionOut: "flipOutX" }, toast, "button");
@@ -131,12 +137,6 @@
         ],
         [
           "<button class='date-conversion'><i class='iconfont icon-date-conversion'></i> <span>日期转换</span></button>",
-          function (instance, toast) {
-            instance.hide({ transitionOut: "flipOutX" }, toast, "button");
-          },
-        ],
-        [
-          "<button class='hide-background'><i class='iconfont icon-hide-background'></i> <span>隐藏背景</span></button>",
           function (instance, toast) {
             instance.hide({ transitionOut: "flipOutX" }, toast, "button");
           },
@@ -157,9 +157,9 @@
     });
     ThemeSwitch();
     shareSwitch();
+    hideBackgroundSwitch();
     translationSwitch();
     dateConversionSwitch();
-    hideBackgroundSwitch();
     fullScreenSwitch();
   });
 
